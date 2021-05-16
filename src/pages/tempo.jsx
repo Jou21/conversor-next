@@ -19,7 +19,7 @@ export async function getStaticProps() {
     props: {
       staticDateString,
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 }
 

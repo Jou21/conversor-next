@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Grafico from "../components/grafico";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Link href="/sobre">
         <a>Ir para Sobre</a>
       </Link>
+      <Grafico />
     </>
   );
 }
