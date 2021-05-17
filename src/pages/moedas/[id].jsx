@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Grafico from "../../components/Grafico";
 
 export default function Moeda({ parDeMoeda }) {
   const { isFallback } = useRouter();
@@ -9,9 +10,10 @@ export default function Moeda({ parDeMoeda }) {
 
   return (
     <div>
-      <h1>
+      <h1 style={{ "text-align": "center" }}>
         {parDeMoeda.symbol} ≅ {parDeMoeda.price}
       </h1>
+      <Grafico simbolo={parDeMoeda.symbol} />
     </div>
   );
 }

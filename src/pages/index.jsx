@@ -1,10 +1,11 @@
 import Link from "next/link";
-import Grafico from "../components/grafico";
+import Grafico from "../components/Grafico";
 
 export default function Home({ propriedades }) {
   return (
     <div>
-      <h1>Cotação ETH {propriedades.price}</h1>
+      <h1 style={{ "text-align": "center" }}>ETH ≅ {propriedades.price}</h1>
+      <Grafico simbolo={propriedades.symbol} />
     </div>
   );
 }

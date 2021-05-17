@@ -5,8 +5,16 @@ export default class Grafico extends React.PureComponent {
   constructor(props) {
     super(props);
     this._ref = React.createRef();
+
+    this.componentDidMount = this.componentDidMount.bind(this);
+
+    this.state = {
+      simbolo: props.simbolo,
+    };
   }
   componentDidMount() {
+    const { simbolo } = this.state;
+
     /* const script = document.createElement("script");
     script.src =
       "https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js";
@@ -19,7 +27,7 @@ export default class Grafico extends React.PureComponent {
       new TradingView.widget({
         width: 980,
         height: 610,
-        symbol: "BINANCE:ETHBRL",
+        symbol: `BINANCE:${simbolo}`,
         interval: "D",
         timezone: "America/Sao_Paulo",
         theme: "light",
@@ -40,18 +48,18 @@ export default class Grafico extends React.PureComponent {
     scriptNovo.async = true;
     scriptNovo.innerHTML = this._ref.current.appendChild(scriptNovo);
   }
+
   render() {
+    const { simbolo } = this.state;
+    const url = `https://br.tradingview.com/symbols/${simbolo}/?exchange=BINANCE`;
+
     return (
       <div className="tradingview-widget-container" ref={this._ref}>
         <div className="tradingview-widget-container__widget"></div>
         <div id="tradingview_823e3"></div>
         <div className="tradingview-widget-copyright">
-          <a
-            href="https://br.tradingview.com/symbols/ETHBRL/?exchange=BINANCE"
-            rel="noopener"
-            target="_blank"
-          >
-            <span class="blue-text">Gráfico ETHBRL</span>
+          <a href={url} rel="noopener" target="_blank">
+            <span className="blue-text">Gráfico {simbolo}</span>
           </a>{" "}
           por TradingView
         </div>
