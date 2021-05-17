@@ -1,38 +1,47 @@
-export async function getStaticPaths() {
-  return {
-    paths: [
-      {
-        params: {
-          id: "1",
-        },
-      },
-      {
-        params: {
-          id: "2",
-        },
-      },
-    ],
-    fallback: "blocking",
-  };
+import { useRouter } from "next/router";
+
+export default function Moeda({ parDeMoeda }) {
+  const { isFallback } = useRouter();
+
+  if (isFallback) {
+    return <p>Carregando...</p>;
+  }
+
+  return (
+    <div>
+      <h1>
+        {parDeMoeda.symbol} ≅ {parDeMoeda.price}
+      </h1>
+    </div>
+  );
 }
 
-export async function getStaticProps(context) {
-  //await delay(5000);
-  const id = context.params.id;
+export const getStaticPaths = async () => {
+  const response = await fetch(`https://api.binance.com/api/v3/exchangeInfo`);
+  const data = await response.json();
+
+  const paths = data["symbols"].map((moeda) => {
+    return { params: { id: moeda.symbol } };
+  });
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps = async (context) => {
+  const { id } = context.params;
+
+  const response = await fetch(
+    `https://api.binance.com/api/v3/ticker/price?symbol=${id}`
+  );
+  const data = await response.json();
 
   return {
     props: {
-      id: id,
+      parDeMoeda: data,
     },
+    revalidate: 10,
   };
-}
-
-function Moedas(props) {
-  return <div>Id do produto: {props.id}</div>;
-}
-
-export default Moedas;
-
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+};

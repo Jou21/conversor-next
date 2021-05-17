@@ -19,16 +19,20 @@ export default class Grafico extends React.PureComponent {
       new TradingView.widget({
         width: 980,
         height: 610,
-        symbol: "NASDAQ:AAPL",
+        symbol: "BINANCE:ETHBRL",
         interval: "D",
-        timezone: "Etc/UTC",
+        timezone: "America/Sao_Paulo",
         theme: "light",
         style: "1",
         locale: "br",
         toolbar_bg: "#f1f3f6",
         enable_publishing: false,
+        hide_side_toolbar: false,
         allow_symbol_change: true,
-        container_id: "tradingview_feb1b",
+        show_popup_button: true,
+        popup_width: "1200",
+        popup_height: "850",
+        container_id: "tradingview_823e3",
       });
     };
 
@@ -40,15 +44,15 @@ export default class Grafico extends React.PureComponent {
     return (
       <div className="tradingview-widget-container" ref={this._ref}>
         <div className="tradingview-widget-container__widget"></div>
-        <div id="tradingview_feb1b"></div>
-        <div class="tradingview-widget-copyright">
+        <div id="tradingview_823e3"></div>
+        <div className="tradingview-widget-copyright">
           <a
-            href="https://br.tradingview.com/symbols/NASDAQ-AAPL/"
+            href="https://br.tradingview.com/symbols/ETHBRL/?exchange=BINANCE"
             rel="noopener"
             target="_blank"
           >
-            <span class="blue-text">Gráfico AAPL</span>
-          </a>
+            <span class="blue-text">Gráfico ETHBRL</span>
+          </a>{" "}
           por TradingView
         </div>
       </div>
