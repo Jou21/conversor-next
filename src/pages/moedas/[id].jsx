@@ -57,9 +57,11 @@ export const getStaticPaths = async () => {
     return { params: { id: moeda.parDeMoeda } };
   }); */
 
-  const paths = {
-    params: { id: "ETHBRL" },
-  };
+  const paths = [
+    {
+      params: { id: "ETHBRL" },
+    },
+  ];
 
   return {
     paths,
