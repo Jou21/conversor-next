@@ -46,7 +46,9 @@ export default function Home({ propriedades }) {
 }
 
 export const getStaticProps = async () => {
-  const urlCoingecko = "http://localhost:3000/api/paresBRL/";
+  const urlVercel = process.env.URL_VERCEL;
+  const urlLocalHost = process.env.URL_LOCAL_HOST;
+  const urlCoingecko = `${urlVercel}/api/paresBRL/`;
 
   const response = await fetch(urlCoingecko);
   const data = await response.json();

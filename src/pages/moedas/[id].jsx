@@ -19,7 +19,9 @@ export default function Moeda({ parDeMoeda }) {
 }
 
 export const getStaticPaths = async () => {
-  const urlCoingecko = "http://localhost:3000/api/todosOsPares/";
+  const urlVercel = process.env.URL_VERCEL;
+  const urlLocalHost = process.env.URL_LOCAL_HOST;
+  const urlCoingecko = `${urlVercel}/api/todosOsPares/`;
 
   const response = await fetch(urlCoingecko);
   const data = await response.json();
