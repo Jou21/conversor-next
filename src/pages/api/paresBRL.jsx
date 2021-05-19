@@ -24,7 +24,7 @@ async function paresBRL(req, res) {
       });
 
       data = await res.json();
-      arrayDados = arrayDados.concat(data);
+      //arrayDados = arrayDados.concat(data);
     } catch (e) {
       error = e.toString();
     }
@@ -35,7 +35,8 @@ async function paresBRL(req, res) {
   res.setHeader("Cache-Control", "s-maxage=10000, stale-while-revalidate");
 
   res.json({
-    date: arrayDados,
+    //date: arrayDados,
+    data,
   });
 }
 
