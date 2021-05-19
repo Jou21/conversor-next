@@ -55,7 +55,7 @@ export const getStaticProps = async () => {
   let arrayDados = [];
   var i;
   for (i = 1; i < 2; i++) {
-    const urlImagensCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
+    const urlCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
 
     const response = await fetch(urlCoingecko);
     const data = await response.json();
