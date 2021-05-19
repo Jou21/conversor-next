@@ -4,7 +4,7 @@ async function todosOsPares(req, res) {
   var array1 = [];
   var array2 = [];
 
-  var i;
+  /*  var i;
   for (i = 1; i < 2; i++) {
     const urlImagensCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
 
@@ -29,7 +29,7 @@ async function todosOsPares(req, res) {
     arrayDados = arrayDados
       .concat(dataImagensCoingecko)
       .concat(dataImagensCoingecko2);
-  }
+  } */
 
   res.setHeader("Cache-Control", "s-maxage=10000, stale-while-revalidate");
 

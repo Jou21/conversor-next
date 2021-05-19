@@ -9,10 +9,10 @@ async function paresBRL(req, res) {
   for (i = 1; i < 2; i++) {
     const urlImagensCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
 
-    /* const responseUrlImagensCoingecko = await fetch(urlImagensCoingecko);
-    const dataImagensCoingecko = await responseUrlImagensCoingecko.json(); */
+    const responseUrlImagensCoingecko = await fetch(urlImagensCoingecko);
+    const dataImagensCoingecko = await responseUrlImagensCoingecko.json();
 
-    try {
+    /* try {
       const res = await fetch(urlImagensCoingecko, {
         method: "GET",
         headers: {
@@ -29,16 +29,16 @@ async function paresBRL(req, res) {
       //arrayDados = arrayDados.concat(data);
     } catch (e) {
       error = e.toString();
-    }
+    } */
 
-    //arrayDados = arrayDados.concat(dataImagensCoingecko);
+    arrayDados = arrayDados.concat(dataImagensCoingecko);
   }
 
   res.setHeader("Cache-Control", "s-maxage=10000, stale-while-revalidate");
 
   res.json({
-    //date: arrayDados,
-    data,
+    data: arrayDados,
+    //data,
   });
 }
 

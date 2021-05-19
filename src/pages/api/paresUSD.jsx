@@ -14,7 +14,7 @@ async function paresUSD(req, res) {
   res.setHeader("Cache-Control", "s-maxage=10000, stale-while-revalidate");
 
   res.json({
-    date: arrayDados,
+    data: arrayDados,
   });
 }
 

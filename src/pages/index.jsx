@@ -52,10 +52,10 @@ export const getStaticProps = async () => {
   //const urlLocalHost = process.env.URL_LOCAL_HOST;
   const urlCoingecko = `${server}/api/paresBRL/`;
 
-  /* const response = await fetch(urlCoingecko);
+  const response = await fetch(urlCoingecko);
   const data = await response.json();
- */
-  let data = [];
+
+  /* let data = [];
   let error = "";
   let paths = [];
 
@@ -73,7 +73,7 @@ export const getStaticProps = async () => {
     data = await res.json();
   } catch (e) {
     error = e.toString();
-  }
+  } */
 
   return {
     props: {
