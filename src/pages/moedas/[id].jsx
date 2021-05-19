@@ -30,8 +30,9 @@ export const getStaticPaths = async () => {
   /* const response = await fetch(urlCoingecko);
   const data = await response.json(); */
 
-  let data = [];
+  const data = [];
   let error = "";
+  const paths = [];
 
   try {
     const res = await fetch(urlCoingecko, {
@@ -45,13 +46,16 @@ export const getStaticPaths = async () => {
     });
 
     data = await res.json();
+    paths = data["date"].map((moeda) => {
+      return { params: { id: moeda.parDeMoeda } };
+    });
   } catch (e) {
     error = e.toString();
   }
 
-  const paths = data["date"].map((moeda) => {
+  /* const paths = data["date"].map((moeda) => {
     return { params: { id: moeda.parDeMoeda } };
-  });
+  }); */
 
   return {
     paths,
