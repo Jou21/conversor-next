@@ -3,11 +3,13 @@ import Grafico from "../../components/Grafico";
 
 import { server } from "../../config";
 
+import axios from "axios";
+
 export default function Moeda({ parDeMoeda }) {
   const { isFallback } = useRouter();
 
   if (isFallback) {
-    return <p>Carregando...</p>;
+    return <p>Carregando....</p>;
   }
 
   return (
