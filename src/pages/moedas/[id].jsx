@@ -42,12 +42,6 @@ export const getStaticPaths = async () => {
 
   const paths = paths1.concat(paths2);
 
-  /* const paths = [
-    {
-      params: { id: "ETHBRL" },
-    },
-  ]; */
-
   return {
     paths,
     fallback: "blocking",
