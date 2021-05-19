@@ -13,7 +13,7 @@ export default function Home({ propriedades }) {
   const { isFallback } = useRouter();
 
   if (isFallback) {
-    return <p>Carregando...</p>;
+    return <p>Carregando....</p>;
   }
 
   const options = [];
