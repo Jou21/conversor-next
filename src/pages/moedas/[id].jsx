@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import Grafico from "../../components/Grafico";
 
+import { server } from "../config";
+
 export default function Moeda({ parDeMoeda }) {
   const { isFallback } = useRouter();
 
@@ -19,9 +21,9 @@ export default function Moeda({ parDeMoeda }) {
 }
 
 export const getStaticPaths = async () => {
-  const urlVercel = process.env.URL_VERCEL;
-  const urlLocalHost = process.env.URL_LOCAL_HOST;
-  const urlCoingecko = `${urlVercel}/api/todosOsPares/`;
+  //const urlVercel = process.env.URL_VERCEL;
+  //const urlLocalHost = process.env.URL_LOCAL_HOST;
+  const urlCoingecko = `${server}/api/todosOsPares/`;
 
   const response = await fetch(urlCoingecko);
   const data = await response.json();

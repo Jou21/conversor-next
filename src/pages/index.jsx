@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Grafico from "../components/Grafico";
 
+import { server } from "../config";
+
 import React, { Component } from "react";
 import Select from "react-select";
 
@@ -46,9 +48,9 @@ export default function Home({ propriedades }) {
 }
 
 export const getStaticProps = async () => {
-  const urlVercel = process.env.URL_VERCEL;
-  const urlLocalHost = process.env.URL_LOCAL_HOST;
-  const urlCoingecko = `${urlVercel}/api/paresBRL/`;
+  //const urlVercel = process.env.URL_VERCEL;
+  //const urlLocalHost = process.env.URL_LOCAL_HOST;
+  const urlCoingecko = `${server}/api/paresBRL/`;
 
   const response = await fetch(urlCoingecko);
   const data = await response.json();
