@@ -1,5 +1,9 @@
 async function paresBRL(req, res) {
-  var arrayDados = [];
+  let arrayDados = [];
+
+  let data = [];
+  let error = "";
+  let data2 = [];
 
   var i;
   for (i = 1; i < 2; i++) {
@@ -7,10 +11,6 @@ async function paresBRL(req, res) {
 
     /* const responseUrlImagensCoingecko = await fetch(urlImagensCoingecko);
     const dataImagensCoingecko = await responseUrlImagensCoingecko.json(); */
-
-    let data = [];
-    let error = "";
-    let paths = [];
 
     try {
       const res = await fetch(urlImagensCoingecko, {
@@ -23,7 +23,9 @@ async function paresBRL(req, res) {
         },
       });
 
+      //data = await JSON.stringify(res.json());
       data = await res.json();
+      //data = JSON.stringify(data2);
       //arrayDados = arrayDados.concat(data);
     } catch (e) {
       error = e.toString();
