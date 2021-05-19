@@ -30,9 +30,9 @@ export const getStaticPaths = async () => {
   /* const response = await fetch(urlCoingecko);
   const data = await response.json(); */
 
-  const data = [];
+  let data = [];
   let error = "";
-  const paths = [];
+  let paths = [];
 
   try {
     const res = await fetch(urlCoingecko, {
