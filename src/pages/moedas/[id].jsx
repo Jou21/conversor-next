@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Grafico from "../../components/Grafico";
 
-import { server } from "../config";
+import { server } from "../../config";
 
 export default function Moeda({ parDeMoeda }) {
   const { isFallback } = useRouter();
