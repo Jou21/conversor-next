@@ -5,7 +5,7 @@ export default function Moeda({ parDeMoeda }) {
   const { isFallback } = useRouter();
 
   if (isFallback) {
-    return <p>Carregando....</p>;
+    return <p>Carregando...</p>;
   }
 
   return (
