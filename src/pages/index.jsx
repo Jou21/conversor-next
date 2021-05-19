@@ -50,10 +50,18 @@ export default function Home({ propriedades }) {
 export const getStaticProps = async () => {
   //const urlVercel = process.env.URL_VERCEL;
   //const urlLocalHost = process.env.URL_LOCAL_HOST;
-  const urlCoingecko = `${server}/api/paresBRL/`;
+  //const urlCoingecko = `${server}/api/paresBRL/`;
 
-  const response = await fetch(urlCoingecko);
-  const data = await response.json();
+  let arrayDados = [];
+  var i;
+  for (i = 1; i < 2; i++) {
+    const urlImagensCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
+
+    const response = await fetch(urlCoingecko);
+    const data = await response.json();
+
+    arrayDados = arrayDados.concat(data);
+  }
 
   /* let data = [];
   let error = "";
@@ -77,7 +85,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      propriedades: data,
+      propriedades: arrayDados,
     },
     revalidate: 10000,
   };
