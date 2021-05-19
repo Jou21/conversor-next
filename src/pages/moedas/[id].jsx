@@ -10,20 +10,22 @@ export default function Moeda({ parDeMoeda }) {
 
   return (
     <div>
-      <h1 style={{ "text-align": "center" }}>
-        {parDeMoeda.symbol} ≅ {parDeMoeda.price}
+      <h1 style={{ textAlign: "center" }}>
+        {parDeMoeda} ≅ {parDeMoeda}
       </h1>
-      <Grafico simbolo={parDeMoeda.symbol} />
+      <Grafico simbolo={parDeMoeda} />
     </div>
   );
 }
 
 export const getStaticPaths = async () => {
-  const response = await fetch(`https://api.binance.com/api/v3/exchangeInfo`);
+  const urlCoingecko = "http://localhost:3000/api/todosOsPares/";
+
+  const response = await fetch(urlCoingecko);
   const data = await response.json();
 
-  const paths = data["symbols"].map((moeda) => {
-    return { params: { id: moeda.symbol } };
+  const paths = data["date"].map((moeda) => {
+    return { params: { id: moeda.parDeMoeda } };
   });
 
   return {
@@ -35,15 +37,10 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { id } = context.params;
 
-  const response = await fetch(
-    `https://api.binance.com/api/v3/ticker/price?symbol=${id}`
-  );
-  const data = await response.json();
-
   return {
     props: {
-      parDeMoeda: data,
+      parDeMoeda: id,
     },
-    revalidate: 10,
+    revalidate: 10000,
   };
 };

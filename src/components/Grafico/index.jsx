@@ -15,19 +15,13 @@ export default class Grafico extends React.PureComponent {
   componentDidMount() {
     const { simbolo } = this.state;
 
-    /* const script = document.createElement("script");
-    script.src =
-      "https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js";
-    script.async = true;
-    script.innerHTML = this._ref.current.appendChild(script); */
-
     const scriptNovo = document.createElement("script");
 
     scriptNovo.onload = function () {
       new TradingView.widget({
         width: 980,
         height: 610,
-        symbol: `BINANCE:${simbolo}`,
+        symbol: `${simbolo}`,
         interval: "D",
         timezone: "America/Sao_Paulo",
         theme: "light",
@@ -51,17 +45,18 @@ export default class Grafico extends React.PureComponent {
 
   render() {
     const { simbolo } = this.state;
-    const url = `https://br.tradingview.com/symbols/${simbolo}/?exchange=BINANCE`;
+
+    const url = `https://br.tradingview.com/symbols/${simbolo}`; //${simbolo}/?exchange=BINANCE
 
     return (
       <div className="tradingview-widget-container" ref={this._ref}>
         <div className="tradingview-widget-container__widget"></div>
         <div id="tradingview_823e3"></div>
         <div className="tradingview-widget-copyright">
+          powered by
           <a href={url} rel="noopener" target="_blank">
-            <span className="blue-text">Gráfico {simbolo}</span>
-          </a>{" "}
-          por TradingView
+            <span className="blue-text"> TradingView</span>
+          </a>
         </div>
       </div>
     );
