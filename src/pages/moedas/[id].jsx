@@ -25,12 +25,12 @@ export default function Moeda({ parDeMoeda }) {
 export const getStaticPaths = async () => {
   //const urlVercel = process.env.URL_VERCEL;
   //const urlLocalHost = process.env.URL_LOCAL_HOST;
-  const urlCoingecko = `${server}/api/todosOsPares/`;
+  //const urlCoingecko = `${server}/api/todosOsPares/`;
 
   /* const response = await fetch(urlCoingecko);
   const data = await response.json(); */
 
-  let data = [];
+  /* let data = [];
   let error = "";
   let paths = [];
 
@@ -51,11 +51,15 @@ export const getStaticPaths = async () => {
     });
   } catch (e) {
     error = e.toString();
-  }
+  } */
 
   /* const paths = data["date"].map((moeda) => {
     return { params: { id: moeda.parDeMoeda } };
   }); */
+
+  const paths = {
+    params: { id: "ETHBRL" },
+  };
 
   return {
     paths,
