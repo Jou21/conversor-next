@@ -27,8 +27,27 @@ export const getStaticPaths = async () => {
   //const urlLocalHost = process.env.URL_LOCAL_HOST;
   const urlCoingecko = `${server}/api/todosOsPares/`;
 
-  const response = await fetch(urlCoingecko);
-  const data = await response.json();
+  /* const response = await fetch(urlCoingecko);
+  const data = await response.json(); */
+
+  let data = [];
+  let error = "";
+
+  try {
+    const res = await fetch(urlCoingecko, {
+      method: "GET",
+      headers: {
+        // update with your user-agent
+        "User-Agent":
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+        Accept: "application/json; charset=UTF-8",
+      },
+    });
+
+    data = await res.json();
+  } catch (e) {
+    error = e.toString();
+  }
 
   const paths = data["date"].map((moeda) => {
     return { params: { id: moeda.parDeMoeda } };
