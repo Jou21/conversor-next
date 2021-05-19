@@ -1,5 +1,5 @@
 async function paresBRL(req, res) {
-  let arrayDados = [];
+  var arrayDados = [];
 
   var i;
   for (i = 1; i < 2; i++) {
