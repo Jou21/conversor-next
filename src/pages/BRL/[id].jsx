@@ -236,21 +236,21 @@ export const getStaticPaths = async () => {
 
   var i;
   for (i = 1; i < 2; i++) {
-    const urlCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
+    const urlCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=50&page=${i}&sparkline=false`;
 
     const response = await fetch(urlCoingecko);
     const data = await response.json();
 
     arrayDados = arrayDados.concat(data);
 
-    const urlCoingecko2 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
+    const urlCoingecko2 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=${i}&sparkline=false`;
 
     const response2 = await fetch(urlCoingecko2);
     const data2 = await response2.json();
 
     arrayDados2 = arrayDados2.concat(data2);
 
-    const urlCoingecko3 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
+    const urlCoingecko3 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=50&page=${i}&sparkline=false`;
 
     const response3 = await fetch(urlCoingecko3);
     const data3 = await response3.json();
