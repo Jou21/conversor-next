@@ -20,11 +20,7 @@ import {
 
 import "semantic-ui-css/semantic.min.css";
 
-export default function Home({
-  propriedades,
-  cotacoesFiat,
-  stringImgMoedaCrypto,
-}) {
+export default function Home({ propriedades, cotacoesFiat }) {
   const valorUSD = cotacoesFiat.USD.buy;
   const valorEUR = cotacoesFiat.EUR.buy;
 
@@ -260,7 +256,7 @@ export const getStaticProps = async () => {
   const responseUrlImgMoedaCrypto = await fetch(urlImgMoedaCrypto);
   const dataUrlImgMoedaCrypto = await responseUrlImgMoedaCrypto.json();
 
-  const stringImgMoedaCrypto = dataUrlImgMoedaCrypto.data.coins[0].iconUrl;
+  //const stringImgMoedaCrypto = dataUrlImgMoedaCrypto.data.coins[0].iconUrl;
 
   //const stringImgEUR = "https://cdn.coinranking.com/fz3P5lsJY/eur.svg"
 
@@ -279,7 +275,6 @@ export const getStaticProps = async () => {
     props: {
       propriedades: arrayDadosBRL,
       cotacoesFiat: cotacoesFiat,
-      stringImgMoedaCrypto,
     },
     revalidate: 10000,
   };
