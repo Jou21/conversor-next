@@ -233,6 +233,8 @@ export const getStaticProps = async () => {
   console.log("URL>>>", process.env.URL);
   const urlCoingecko = `${process.env.URL}/api`;
 
+  const a = "1";
+
   const response = await fetch(urlCoingecko);
   const data = await response.json();
 
