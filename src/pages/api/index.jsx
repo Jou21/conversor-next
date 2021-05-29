@@ -6,7 +6,7 @@ async function api(req, res) {
     const urlCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
 
     const response = await fetch(urlCoingecko);
-    const data = await response.json();
+    const data = await response.text();
 
     arrayDadosBRL = arrayDadosBRL.concat(data);
   }
@@ -14,14 +14,14 @@ async function api(req, res) {
   const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=6fe79203";
 
   const responseCotacoesFiat = await fetch(urlCotacoesFiat);
-  const dataCotacoesFiat = await responseCotacoesFiat.json();
+  const dataCotacoesFiat = await responseCotacoesFiat.text();
 
   const cotacoesFiat = dataCotacoesFiat.results.currencies;
 
   const urlImgMoedaCrypto = `https://api.coinranking.com/v2/search-suggestions?query=ethereum`;
 
   const responseUrlImgMoedaCrypto = await fetch(urlImgMoedaCrypto);
-  const dataUrlImgMoedaCrypto = await responseUrlImgMoedaCrypto.json();
+  const dataUrlImgMoedaCrypto = await responseUrlImgMoedaCrypto.text();
 
   const stringImgMoedaCrypto = dataUrlImgMoedaCrypto.data.coins[0].iconUrl;
 
