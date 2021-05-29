@@ -1,10 +1,8 @@
-import Grafico from "../components/Grafico";
+import Grafico from "../../components/Grafico";
 
 import Select from "react-select";
 
 import Link from "next/link";
-
-//import axios from "axios";
 
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
@@ -22,7 +20,8 @@ import {
 
 import "semantic-ui-css/semantic.min.css";
 
-export default function Home({
+export default function Moeda({
+  qualEhACrypto,
   propriedades,
   cotacoesFiat,
   stringImgMoedaCrypto,
@@ -30,9 +29,25 @@ export default function Home({
   const valorUSD = cotacoesFiat.USD.buy;
   const valorEUR = cotacoesFiat.EUR.buy;
 
-  const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
+  let precoDaMoedaCrypto = "0";
+  let propriedadesMoedaCryptoAtual = [];
+  let indexOptions = 0;
+
+  const qualEhOValorDaMoedaFiat = function () {
+    propriedades.map((moeda, index) => {
+      if (qualEhACrypto == moeda.symbol.toUpperCase()) {
+        //console.log("ENTROU1");
+        indexOptions = index;
+        propriedadesMoedaCryptoAtual = moeda;
+        precoDaMoedaCrypto = moeda.current_price / valorEUR;
+      }
+    });
+    return precoDaMoedaCrypto;
+  };
+
+  const [selectMoedaFiat, setSelectMoedaFiat] = useState("EUR");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
-  const [moedaFiat, setMoedaFiat] = useState(propriedades[1].current_price);
+  const [moedaFiat, setMoedaFiat] = useState(qualEhOValorDaMoedaFiat);
 
   const options = [];
 
@@ -73,13 +88,13 @@ export default function Home({
     setSelectMoedaFiat(e.value.toUpperCase());
 
     if (e.value.toUpperCase() === "USD") {
-      const num = (moedaCrypto * propriedades[1].current_price) / valorUSD;
+      const num = (moedaCrypto * precoDaMoedaCrypto) / valorUSD;
       setMoedaFiat(num);
     } else if (e.value.toUpperCase() === "EUR") {
-      const num = (moedaCrypto * propriedades[1].current_price) / valorEUR;
+      const num = (moedaCrypto * precoDaMoedaCrypto) / valorEUR;
       setMoedaFiat(num);
     } else {
-      const num = moedaCrypto * propriedades[1].current_price;
+      const num = moedaCrypto * precoDaMoedaCrypto;
       setMoedaFiat(num);
     }
   };
@@ -88,45 +103,31 @@ export default function Home({
     setMoedaCrypto(e.target.value);
 
     if (selectMoedaFiat === "USD") {
-      const num = (propriedades[1].current_price * e.target.value) / valorUSD;
+      const num = (precoDaMoedaCrypto * e.target.value) / valorUSD;
       setMoedaFiat(num);
     } else if (selectMoedaFiat === "EUR") {
-      const num = (propriedades[1].current_price * e.target.value) / valorEUR;
+      const num = (precoDaMoedaCrypto * e.target.value) / valorEUR;
       setMoedaFiat(num);
     } else {
-      const num = propriedades[1].current_price * e.target.value;
+      const num = precoDaMoedaCrypto * e.target.value;
       setMoedaFiat(num);
     }
   };
 
   const handleChangeValorMoedaFiat = (e) => {
-    //console.log("VALOR6>>>", moedaFiat);
-    //console.log("VALOR7>>>", e.target.value);
     setMoedaFiat(e.target.value);
 
     if (selectMoedaFiat === "USD") {
-      const num = e.target.value / propriedades[1].current_price / valorUSD;
+      const num = e.target.value / precoDaMoedaCrypto / valorUSD;
       setMoedaCrypto(num);
     } else if (selectMoedaFiat === "EUR") {
-      const num = e.target.value / propriedades[1].current_price / valorEUR;
+      const num = e.target.value / precoDaMoedaCrypto / valorEUR;
       setMoedaCrypto(num);
     } else {
-      const num = e.target.value / propriedades[1].current_price;
+      const num = e.target.value / precoDaMoedaCrypto;
       setMoedaCrypto(num);
     }
   };
-
-  /* const onlyNumber = (evt) => {
-    var theEvent = evt || window.event;
-    var key = theEvent.keyCode || theEvent.which;
-    key = String.fromCharCode(key);
-    //var regex = /^[0-9.,]+$/;
-    var regex = /^[0-9.]+$/;
-    if (!regex.test(key)) {
-      theEvent.returnValue = false;
-      if (theEvent.preventDefault) theEvent.preventDefault();
-    }
-  }; */
 
   const customStyles = {
     control: (base) => ({
@@ -141,10 +142,7 @@ export default function Home({
     const array = {
       value: moeda.name,
       label: (
-        <Link
-          href={`${selectMoedaFiat}/[id]`}
-          as={`${selectMoedaFiat}/${moeda.symbol.toUpperCase()}`}
-        >
+        <Link href={`${moeda.symbol.toUpperCase()}`}>
           <div>
             &nbsp;&nbsp;
             <img src={moeda.image} height="30px" width="30px" /> &nbsp;
@@ -159,7 +157,7 @@ export default function Home({
 
   return (
     <div className="container">
-      <h1>eae {propriedades[0].symbol}</h1>
+      <h1>eae {propriedadesMoedaCryptoAtual.symbol}</h1>
 
       <Segment>
         <Grid columns={2} relaxed="very" stackable verticalAlign="top">
@@ -172,7 +170,7 @@ export default function Home({
                 value={moedaCrypto}
                 onChange={handleChangeValorMoedaCrypto}
                 type="number"
-                placeholder={propriedades[1].name}
+                placeholder={propriedadesMoedaCryptoAtual.name}
                 style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
               />
               <i aria-hidden="true" className="dollar icon"></i>
@@ -180,7 +178,7 @@ export default function Home({
 
             <Select
               instanceId="0"
-              defaultValue={options[1]}
+              defaultValue={options[indexOptions]}
               options={options}
               styles={customStyles}
             />
@@ -203,7 +201,7 @@ export default function Home({
 
             <Select
               instanceId="1"
-              defaultValue={options2[0]}
+              defaultValue={options2[2]}
               options={options2}
               styles={customStyles}
               onChange={handleChangeSelectMoedaFiat}
@@ -224,16 +222,64 @@ export default function Home({
         </Divider>
       </Segment>
 
-      <Grafico
-        simbolo={`${propriedades[0].symbol.toUpperCase()}${selectMoedaFiat}`}
-      />
+      <Grafico simbolo={`${qualEhACrypto.toUpperCase()}${selectMoedaFiat}`} />
     </div>
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticPaths = async () => {
+  let arrayDados = [];
+  let arrayDados2 = [];
+  let arrayDados3 = [];
+
+  var i;
+  for (i = 1; i < 2; i++) {
+    const urlCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
+
+    const response = await fetch(urlCoingecko);
+    const data = await response.json();
+
+    arrayDados = arrayDados.concat(data);
+
+    const urlCoingecko2 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
+
+    const response2 = await fetch(urlCoingecko2);
+    const data2 = await response2.json();
+
+    arrayDados2 = arrayDados2.concat(data2);
+
+    const urlCoingecko3 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
+
+    const response3 = await fetch(urlCoingecko3);
+    const data3 = await response3.json();
+
+    arrayDados3 = arrayDados3.concat(data3);
+  }
+
+  let paths1 = arrayDados.map((moeda) => {
+    return { params: { id: `${moeda.symbol.toUpperCase()}BRL` } };
+  });
+
+  let paths2 = arrayDados2.map((moeda) => {
+    return { params: { id: `${moeda.symbol.toUpperCase()}USD` } };
+  });
+
+  let paths3 = arrayDados3.map((moeda) => {
+    return { params: { id: `${moeda.symbol.toUpperCase()}EUR` } };
+  });
+
+  const paths = paths1.concat(paths2.concat(paths3));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps = async (context) => {
+  const { id } = context.params;
+
   let arrayDadosBRL = [];
-  //let cotacoesFiat = [];
 
   var i;
   for (i = 1; i < 2; i++) {
@@ -252,11 +298,6 @@ export const getStaticProps = async () => {
 
   const cotacoesFiat = dataCotacoesFiat.results.currencies;
 
-  /* await axios.get(urlCotacoesFiat).then((res) => {
-    cotacoesFiat = res.data.results.currencies;
-    console.log(cotacoesFiat);
-  }); */
-
   const urlImgMoedaCrypto = `https://api.coinranking.com/v2/search-suggestions?query=ethereum`;
 
   const responseUrlImgMoedaCrypto = await fetch(urlImgMoedaCrypto);
@@ -264,21 +305,9 @@ export const getStaticProps = async () => {
 
   const stringImgMoedaCrypto = dataUrlImgMoedaCrypto.data.coins[0].iconUrl;
 
-  //const stringImgEUR = "https://cdn.coinranking.com/fz3P5lsJY/eur.svg"
-
-  //Usar para buscar imagem caso mudem a api
-  /* 
-  const urlImgMoedaFiat = `https://api.coinranking.com/v2/reference-currencies`;
-  const responseUrlImgMoedaFiat = await fetch(urlImgMoedaFiat);
-  const dataUrlImgMoedaFiat = await responseUrlImgMoedaFiat.json();
-
-  const stringImgMoedaFiat = dataUrlImgMoedaFiat;
-
-  console.log(stringImgMoedaFiat);
-  */
-
   return {
     props: {
+      qualEhACrypto: id,
       propriedades: arrayDadosBRL,
       cotacoesFiat: cotacoesFiat,
       stringImgMoedaCrypto,
