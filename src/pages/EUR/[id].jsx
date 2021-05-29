@@ -241,7 +241,7 @@ export const getStaticPaths = async () => {
 
     arrayDados = arrayDados.concat(data);
 
-    const urlCoingecko2 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=${i}&sparkline=false`;
+    /* const urlCoingecko2 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=${i}&sparkline=false`;
 
     const response2 = await fetch(urlCoingecko2);
     const data2 = await response2.json();
@@ -253,22 +253,24 @@ export const getStaticPaths = async () => {
     const response3 = await fetch(urlCoingecko3);
     const data3 = await response3.json();
 
-    arrayDados3 = arrayDados3.concat(data3);
+    arrayDados3 = arrayDados3.concat(data3); */
   }
 
   let paths1 = arrayDados.map((moeda) => {
     return { params: { id: `${moeda.symbol.toUpperCase()}BRL` } };
   });
 
-  let paths2 = arrayDados2.map((moeda) => {
+  /* let paths2 = arrayDados2.map((moeda) => {
     return { params: { id: `${moeda.symbol.toUpperCase()}USD` } };
   });
 
   let paths3 = arrayDados3.map((moeda) => {
     return { params: { id: `${moeda.symbol.toUpperCase()}EUR` } };
-  });
+  }); */
 
-  const paths = paths1.concat(paths2.concat(paths3));
+  //const paths = paths1.concat(paths2.concat(paths3));
+
+  const paths = paths1;
 
   return {
     paths,
