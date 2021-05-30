@@ -98,8 +98,6 @@ export default function Home({ propriedades, cotacoesFiat }) {
   };
 
   const handleChangeValorMoedaFiat = (e) => {
-    //console.log("VALOR6>>>", moedaFiat);
-    //console.log("VALOR7>>>", e.target.value);
     setMoedaFiat(e.target.value);
 
     if (selectMoedaFiat === "USD") {
@@ -113,18 +111,6 @@ export default function Home({ propriedades, cotacoesFiat }) {
       setMoedaCrypto(num);
     }
   };
-
-  /* const onlyNumber = (evt) => {
-    var theEvent = evt || window.event;
-    var key = theEvent.keyCode || theEvent.which;
-    key = String.fromCharCode(key);
-    //var regex = /^[0-9.,]+$/;
-    var regex = /^[0-9.]+$/;
-    if (!regex.test(key)) {
-      theEvent.returnValue = false;
-      if (theEvent.preventDefault) theEvent.preventDefault();
-    }
-  }; */
 
   const customStyles = {
     control: (base) => ({
@@ -231,7 +217,6 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
 export const getStaticProps = async () => {
   let arrayDadosBRL = [];
-  //let cotacoesFiat = [];
 
   var i;
   for (i = 1; i < 2; i++) {
@@ -250,30 +235,10 @@ export const getStaticProps = async () => {
 
   const cotacoesFiat = dataCotacoesFiat.results.currencies;
 
-  /* await axios.get(urlCotacoesFiat).then((res) => {
-    cotacoesFiat = res.data.results.currencies;
-    console.log(cotacoesFiat);
-  }); */
-
   const urlImgMoedaCrypto = `https://api.coinranking.com/v2/search-suggestions?query=ethereum`;
 
   const responseUrlImgMoedaCrypto = await fetch(urlImgMoedaCrypto);
   const dataUrlImgMoedaCrypto = await responseUrlImgMoedaCrypto.json();
-
-  //const stringImgMoedaCrypto = dataUrlImgMoedaCrypto.data.coins[0].iconUrl;
-
-  //const stringImgEUR = "https://cdn.coinranking.com/fz3P5lsJY/eur.svg"
-
-  //Usar para buscar imagem caso mudem a api
-  /* 
-  const urlImgMoedaFiat = `https://api.coinranking.com/v2/reference-currencies`;
-  const responseUrlImgMoedaFiat = await fetch(urlImgMoedaFiat);
-  const dataUrlImgMoedaFiat = await responseUrlImgMoedaFiat.json();
-
-  const stringImgMoedaFiat = dataUrlImgMoedaFiat;
-
-  console.log(stringImgMoedaFiat);
-  */
 
   return {
     props: {

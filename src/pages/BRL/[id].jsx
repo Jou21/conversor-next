@@ -76,7 +76,6 @@ export default function Moeda({
 
   const handleChangeSelectMoedaFiat = (e) => {
     setSelectMoedaFiat(e.value.toUpperCase());
-    console.log("ENTROU0>>>", "NADA");
     if (e.value.toUpperCase() === "USD") {
       const num = (moedaCrypto * precoDaMoedaCrypto) / valorUSD;
       setMoedaFiat(num);
@@ -91,25 +90,19 @@ export default function Moeda({
 
   const handleChangeValorMoedaCrypto = (e) => {
     setMoedaCrypto(e.target.value);
-
     if (selectMoedaFiat === "USD") {
       const num = (precoDaMoedaCrypto * e.target.value) / valorUSD;
       setMoedaFiat(num);
-      console.log("ENTROU1>>>", num);
     } else if (selectMoedaFiat === "EUR") {
       const num = (precoDaMoedaCrypto * e.target.value) / valorEUR;
       setMoedaFiat(num);
-      console.log("ENTROU2>>>", num);
     } else {
       const num = precoDaMoedaCrypto * e.target.value;
       setMoedaFiat(num);
-      console.log("ENTROU3>>>", num);
     }
   };
 
   const handleChangeValorMoedaFiat = (e) => {
-    //console.log("VALOR6>>>", moedaFiat);
-    //console.log("VALOR7>>>", e.target.value);
     setMoedaFiat(e.target.value);
 
     if (selectMoedaFiat === "USD") {
@@ -149,8 +142,6 @@ export default function Moeda({
 
     options.push(array);
   });
-
-  console.log("moedaFiat>>>", moedaFiat);
 
   return (
     <div className="container">
@@ -237,35 +228,11 @@ export const getStaticPaths = async () => {
     const data = await response.json();
 
     arrayDados = arrayDados.concat(data);
-
-    /* const urlCoingecko2 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=${i}&sparkline=false`;
-
-    const response2 = await fetch(urlCoingecko2);
-    const data2 = await response2.json();
-
-    arrayDados2 = arrayDados2.concat(data2);
-
-    const urlCoingecko3 = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=50&page=${i}&sparkline=false`;
-
-    const response3 = await fetch(urlCoingecko3);
-    const data3 = await response3.json();
-
-    arrayDados3 = arrayDados3.concat(data3); */
   }
 
   let paths1 = arrayDados.map((moeda) => {
     return { params: { id: `${moeda.symbol.toUpperCase()}BRL` } };
   });
-
-  /* let paths2 = arrayDados2.map((moeda) => {
-    return { params: { id: `${moeda.symbol.toUpperCase()}USD` } };
-  });
-
-  let paths3 = arrayDados3.map((moeda) => {
-    return { params: { id: `${moeda.symbol.toUpperCase()}EUR` } };
-  }); */
-
-  //const paths = paths1.concat(paths2.concat(paths3));
 
   const paths = paths1;
 
@@ -301,8 +268,6 @@ export const getStaticProps = async (context) => {
 
   const responseUrlImgMoedaCrypto = await fetch(urlImgMoedaCrypto);
   const dataUrlImgMoedaCrypto = await responseUrlImgMoedaCrypto.json();
-
-  //const stringImgMoedaCrypto = dataUrlImgMoedaCrypto.data.coins[0].iconUrl;
 
   let precoDaMoedaCrypto = "0";
   let propriedadesMoedaCryptoAtual = [];
