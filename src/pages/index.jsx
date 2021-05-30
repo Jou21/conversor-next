@@ -182,7 +182,7 @@ export default function Home({
               style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
             >
               <input
-                value={moedaFiat.toFixed(2)}
+                value={moedaFiat}
                 onChange={handleChangeValorMoedaFiat}
                 type="number"
                 placeholder={selectMoedaFiat}
