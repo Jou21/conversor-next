@@ -147,17 +147,6 @@ export default function Home({
 
   return (
     <div className="container">
-      <h1
-        style={{
-          textAlign: "center",
-          color: "gray",
-          paddingTop: "11px",
-        }}
-      >
-        1{propriedades[1].symbol} ≅ {moedaFiat.toFixed(2).replace(".", ",")}{" "}
-        {selectMoedaFiat}
-      </h1>
-
       <div style={{ textAlign: "center", paddingBottom: "80px" }}>
         <img src={stringImgMoedaCrypto} height="15%" width="15%" />
       </div>
