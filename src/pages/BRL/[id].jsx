@@ -35,6 +35,10 @@ export default function Moeda({
   const [moedaCrypto, setMoedaCrypto] = useState(1);
   const [moedaFiat, setMoedaFiat] = useState(precoDaMoedaCrypto);
 
+  useEffect(() => {
+    setMoedaFiat(precoDaMoedaCrypto);
+  }, [precoDaMoedaCrypto]);
+
   const options = [];
 
   const options2 = [
@@ -72,7 +76,7 @@ export default function Moeda({
 
   const handleChangeSelectMoedaFiat = (e) => {
     setSelectMoedaFiat(e.value.toUpperCase());
-
+    console.log("ENTROU0>>>", "NADA");
     if (e.value.toUpperCase() === "USD") {
       const num = (moedaCrypto * precoDaMoedaCrypto) / valorUSD;
       setMoedaFiat(num);
@@ -91,12 +95,15 @@ export default function Moeda({
     if (selectMoedaFiat === "USD") {
       const num = (precoDaMoedaCrypto * e.target.value) / valorUSD;
       setMoedaFiat(num);
+      console.log("ENTROU1>>>", num);
     } else if (selectMoedaFiat === "EUR") {
       const num = (precoDaMoedaCrypto * e.target.value) / valorEUR;
       setMoedaFiat(num);
+      console.log("ENTROU2>>>", num);
     } else {
       const num = precoDaMoedaCrypto * e.target.value;
       setMoedaFiat(num);
+      console.log("ENTROU3>>>", num);
     }
   };
 
@@ -142,6 +149,8 @@ export default function Moeda({
 
     options.push(array);
   });
+
+  console.log("moedaFiat>>>", moedaFiat);
 
   return (
     <div className="container">
@@ -281,7 +290,7 @@ export const getStaticProps = async (context) => {
     arrayDadosBRL = arrayDadosBRL.concat(data);
   }
 
-  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=90fe1bd0";
+  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=608dcb04";
 
   const responseCotacoesFiat = await fetch(urlCotacoesFiat);
   const dataCotacoesFiat = await responseCotacoesFiat.json();

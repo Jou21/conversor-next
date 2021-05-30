@@ -28,6 +28,10 @@ export default function Home({ propriedades, cotacoesFiat }) {
   const [moedaCrypto, setMoedaCrypto] = useState(1);
   const [moedaFiat, setMoedaFiat] = useState(propriedades[1].current_price);
 
+  useEffect(() => {
+    setMoedaFiat(propriedades[1].current_price);
+  }, [propriedades]);
+
   const options = [];
 
   const options2 = [
@@ -239,7 +243,7 @@ export const getStaticProps = async () => {
     arrayDadosBRL = arrayDadosBRL.concat(data);
   }
 
-  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=90fe1bd0";
+  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=608dcb04";
 
   const responseCotacoesFiat = await fetch(urlCotacoesFiat);
   const dataCotacoesFiat = await responseCotacoesFiat.json();

@@ -35,6 +35,10 @@ export default function Moeda({
   const [moedaCrypto, setMoedaCrypto] = useState(1);
   const [moedaFiat, setMoedaFiat] = useState(precoDaMoedaCrypto / valorEUR);
 
+  useEffect(() => {
+    setMoedaFiat(precoDaMoedaCrypto / valorEUR);
+  }, [precoDaMoedaCrypto]);
+
   const options = [];
 
   const options2 = [
