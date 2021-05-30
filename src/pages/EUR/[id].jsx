@@ -151,7 +151,7 @@ export default function Moeda({
   return (
     <div className="container">
       <h1 style={{ textAlign: "center" }}>
-        1{propriedadesMoedaCryptoAtual.symbol.toUpperCase()} ≅{" "}
+        1{propriedadesMoedaCryptoAtual.symbol} ≅{" "}
         {moedaFiat.toFixed(2).replace(".", ",")} {selectMoedaFiat}
       </h1>
       <Segment>

@@ -154,8 +154,8 @@ export default function Home({
           paddingTop: "11px",
         }}
       >
-        1{propriedades[1].symbol.toUpperCase()} ≅{" "}
-        {moedaFiat.toFixed(2).replace(".", ",")} {selectMoedaFiat}
+        1{propriedades[1].symbol} ≅ {moedaFiat.toFixed(2).replace(".", ",")}{" "}
+        {selectMoedaFiat}
       </h1>
 
       <div style={{ textAlign: "center", paddingBottom: "80px" }}>
