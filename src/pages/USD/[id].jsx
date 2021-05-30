@@ -28,8 +28,8 @@ export default function Moeda({
   propriedadesMoedaCryptoAtual,
   indexOptions,
 }) {
-  const valorUSD = cotacoesFiat.USD.buy;
-  const valorEUR = cotacoesFiat.EUR.buy;
+  const valorUSD = cotacoesFiat.USDBRL.ask;
+  const valorEUR = cotacoesFiat.EURBRL.ask;
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("USD");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
@@ -150,8 +150,10 @@ export default function Moeda({
 
   return (
     <div className="container">
-      <h1>eae {propriedadesMoedaCryptoAtual.symbol}</h1>
-
+      <h1 style={{ textAlign: "center" }}>
+        1{propriedadesMoedaCryptoAtual.symbol.toUpperCase()} ≅{" "}
+        {moedaFiat.toFixed(2).replace(".", ",")} {selectMoedaFiat}
+      </h1>
       <Segment>
         <Grid columns={2} relaxed="very" stackable verticalAlign="top">
           <Grid.Column>
@@ -183,7 +185,7 @@ export default function Moeda({
               style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
             >
               <input
-                value={moedaFiat}
+                value={moedaFiat.toFixed(2)}
                 onChange={handleChangeValorMoedaFiat}
                 type="number"
                 placeholder={selectMoedaFiat}
@@ -260,12 +262,13 @@ export const getStaticProps = async (context) => {
     arrayDadosBRL = arrayDadosBRL.concat(data);
   }
 
-  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=608dcb04";
+  const urlCotacoesFiat =
+    "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL";
 
   const responseCotacoesFiat = await fetch(urlCotacoesFiat);
   const dataCotacoesFiat = await responseCotacoesFiat.json();
 
-  const cotacoesFiat = dataCotacoesFiat.results.currencies;
+  const cotacoesFiat = dataCotacoesFiat;
 
   const urlImgMoedaCrypto = `https://api.coinranking.com/v2/search-suggestions?query=ethereum`;
 

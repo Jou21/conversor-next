@@ -20,9 +20,13 @@ import {
 
 import "semantic-ui-css/semantic.min.css";
 
-export default function Home({ propriedades, cotacoesFiat }) {
-  const valorUSD = cotacoesFiat.USD.buy;
-  const valorEUR = cotacoesFiat.EUR.buy;
+export default function Home({
+  propriedades,
+  cotacoesFiat,
+  stringImgMoedaCrypto,
+}) {
+  const valorUSD = cotacoesFiat.USDBRL.ask;
+  const valorEUR = cotacoesFiat.EURBRL.ask;
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
@@ -143,7 +147,20 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
   return (
     <div className="container">
-      <h1>eae {propriedades[0].symbol}</h1>
+      <h1
+        style={{
+          textAlign: "center",
+          color: "gray",
+          paddingTop: "11px",
+        }}
+      >
+        1{propriedades[1].symbol.toUpperCase()} ≅{" "}
+        {moedaFiat.toFixed(2).replace(".", ",")} {selectMoedaFiat}
+      </h1>
+
+      <div style={{ textAlign: "center", paddingBottom: "80px" }}>
+        <img src={stringImgMoedaCrypto} height="15%" width="15%" />
+      </div>
 
       <Segment>
         <Grid columns={2} relaxed="very" stackable verticalAlign="top">
@@ -176,7 +193,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
               style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
             >
               <input
-                value={moedaFiat}
+                value={moedaFiat.toFixed(2)}
                 onChange={handleChangeValorMoedaFiat}
                 type="number"
                 placeholder={selectMoedaFiat}
@@ -208,6 +225,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
         </Divider>
       </Segment>
 
+      <div style={{ paddingTop: "500px" }}></div>
+
       <Grafico
         simbolo={`${propriedades[0].symbol.toUpperCase()}${selectMoedaFiat}`}
       />
@@ -217,6 +236,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
 export const getStaticProps = async () => {
   let arrayDadosBRL = [];
+  let arrayImagens = [];
 
   var i;
   for (i = 1; i < 2; i++) {
@@ -228,22 +248,26 @@ export const getStaticProps = async () => {
     arrayDadosBRL = arrayDadosBRL.concat(data);
   }
 
-  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=608dcb04";
+  const urlCotacoesFiat =
+    "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL";
 
   const responseCotacoesFiat = await fetch(urlCotacoesFiat);
   const dataCotacoesFiat = await responseCotacoesFiat.json();
 
-  const cotacoesFiat = dataCotacoesFiat.results.currencies;
+  const cotacoesFiat = dataCotacoesFiat;
 
   const urlImgMoedaCrypto = `https://api.coinranking.com/v2/search-suggestions?query=ethereum`;
 
   const responseUrlImgMoedaCrypto = await fetch(urlImgMoedaCrypto);
   const dataUrlImgMoedaCrypto = await responseUrlImgMoedaCrypto.json();
 
+  const stringImgMoedaCrypto = dataUrlImgMoedaCrypto.data.coins[0].iconUrl;
+
   return {
     props: {
       propriedades: arrayDadosBRL,
       cotacoesFiat: cotacoesFiat,
+      stringImgMoedaCrypto: stringImgMoedaCrypto,
     },
     revalidate: 10000,
   };
