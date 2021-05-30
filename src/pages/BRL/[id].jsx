@@ -130,7 +130,10 @@ export default function Moeda({
     const array = {
       value: moeda.name,
       label: (
-        <Link href={`${moeda.symbol.toUpperCase()}`}>
+        <Link
+          href={`../${selectMoedaFiat}/[id]`}
+          as={`../${selectMoedaFiat}/${moeda.symbol.toUpperCase()}`}
+        >
           <div>
             &nbsp;&nbsp;
             <img src={moeda.image} height="30px" width="30px" /> &nbsp;
