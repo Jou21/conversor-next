@@ -20,29 +20,20 @@ import {
 
 import "semantic-ui-css/semantic.min.css";
 
-export default function Moeda({ qualEhACrypto, propriedades, cotacoesFiat }) {
+export default function Moeda({
+  qualEhACrypto,
+  propriedades,
+  cotacoesFiat,
+  precoDaMoedaCrypto,
+  propriedadesMoedaCryptoAtual,
+  indexOptions,
+}) {
   const valorUSD = cotacoesFiat.USD.buy;
   const valorEUR = cotacoesFiat.EUR.buy;
 
-  let precoDaMoedaCrypto = "0";
-  let propriedadesMoedaCryptoAtual = [];
-  let indexOptions = 0;
-
-  const qualEhOValorDaMoedaFiat = function () {
-    propriedades.map((moeda, index) => {
-      if (qualEhACrypto == moeda.symbol.toUpperCase()) {
-        //console.log("ENTROU1");
-        indexOptions = index;
-        propriedadesMoedaCryptoAtual = moeda;
-        precoDaMoedaCrypto = moeda.current_price;
-      }
-    });
-    return precoDaMoedaCrypto;
-  };
-
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
-  const [moedaFiat, setMoedaFiat] = useState(qualEhOValorDaMoedaFiat);
+  const [moedaFiat, setMoedaFiat] = useState(precoDaMoedaCrypto);
 
   const options = [];
 
@@ -290,7 +281,7 @@ export const getStaticProps = async (context) => {
     arrayDadosBRL = arrayDadosBRL.concat(data);
   }
 
-  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=6fe79203";
+  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=90fe1bd0";
 
   const responseCotacoesFiat = await fetch(urlCotacoesFiat);
   const dataCotacoesFiat = await responseCotacoesFiat.json();
@@ -304,11 +295,26 @@ export const getStaticProps = async (context) => {
 
   //const stringImgMoedaCrypto = dataUrlImgMoedaCrypto.data.coins[0].iconUrl;
 
+  let precoDaMoedaCrypto = "0";
+  let propriedadesMoedaCryptoAtual = [];
+  let indexOptions = 0;
+
+  arrayDadosBRL.map((moeda, index) => {
+    if (id == moeda.symbol.toUpperCase()) {
+      indexOptions = index;
+      propriedadesMoedaCryptoAtual = moeda;
+      precoDaMoedaCrypto = moeda.current_price;
+    }
+  });
+
   return {
     props: {
       qualEhACrypto: id,
       propriedades: arrayDadosBRL,
       cotacoesFiat: cotacoesFiat,
+      precoDaMoedaCrypto,
+      propriedadesMoedaCryptoAtual,
+      indexOptions,
     },
     revalidate: 10000,
   };

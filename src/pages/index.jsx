@@ -239,7 +239,7 @@ export const getStaticProps = async () => {
     arrayDadosBRL = arrayDadosBRL.concat(data);
   }
 
-  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=6fe79203";
+  const urlCotacoesFiat = "https://api.hgbrasil.com/finance?key=90fe1bd0";
 
   const responseCotacoesFiat = await fetch(urlCotacoesFiat);
   const dataCotacoesFiat = await responseCotacoesFiat.json();
