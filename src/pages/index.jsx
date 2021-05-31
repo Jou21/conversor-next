@@ -7,7 +7,10 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
-import { FaBeer } from "react-icons/fa";
+import { CgArrowsExchangeAlt, CgDollar } from "react-icons/cg";
+import { FaExchangeAlt, FaDollarSign } from "react-icons/fa";
+import { FiDollarSign } from "react-icons/fi";
+import { BiDollar, BiDollarCircle } from "react-icons/Bi";
 
 import {
   Button,
@@ -422,14 +425,14 @@ export default function Home({ propriedades, cotacoesFiat }) {
                 style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
               />
               <i
-                aria-hidden="true"
-                className="fa fa-usd"
                 style={{
-                  marginLeft: "-40px",
+                  marginLeft: "-45px",
                   marginTop: "20px",
                   color: "gray",
                 }}
-              ></i>
+              >
+                <FiDollarSign />
+              </i>
             </div>
 
             <Select
@@ -453,14 +456,14 @@ export default function Home({ propriedades, cotacoesFiat }) {
                 style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
               />
               <i
-                aria-hidden="true"
-                className="fa fa-usd"
                 style={{
-                  marginLeft: "-40px",
+                  marginLeft: "-45px",
                   marginTop: "20px",
                   color: "gray",
                 }}
-              ></i>
+              >
+                <FiDollarSign />
+              </i>
             </div>
 
             <Select
@@ -479,9 +482,10 @@ export default function Home({ propriedades, cotacoesFiat }) {
               marginLeft: "0px",
               marginTop: "-16px",
               fontSize: "30px",
+              color: "gray",
             }}
           >
-            <FaBeer />
+            <FaExchangeAlt />
           </div>
         </Divider>
       </Segment>
