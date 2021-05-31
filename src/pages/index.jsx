@@ -7,7 +7,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
-import { CgArrowsExchangeAlt } from "react-icons/cg";
+import { FaExchangeAlt } from "react-icons/fa";
 import { FiDollarSign } from "react-icons/fi";
 
 import {
