@@ -139,15 +139,21 @@ export default function Home({ propriedades, cotacoesFiat }) {
       height: 70,
       minHeight: 70,
       borderRadius: 0,
+      width: "100%",
+      padding: "0px",
     }),
     valueContainer: (provided, state) => ({
       ...provided,
       height: "70px",
+      width: "100%",
+      padding: "0px",
     }),
 
     input: (provided, state) => ({
       ...provided,
       margin: "0px",
+      width: "100%",
+      padding: "3px",
     }),
     indicatorSeparator: (state) => ({
       display: "none",
@@ -385,7 +391,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
           as={`${selectMoedaFiat}/${moeda.symbol.toUpperCase()}`}
         >
           <div
-            style={{ fontSize: "20px", marginTop: "3px", marginLeft: "-8px" }}
+            style={{ fontSize: "20px", marginTop: "3px", marginLeft: "-3px" }}
           >
             &nbsp;&nbsp;
             {imagem}
@@ -413,7 +419,11 @@ export default function Home({ propriedades, cotacoesFiat }) {
           <Grid.Column>
             <div
               className="ui massive icon input"
-              style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
+              style={{
+                width: "100%",
+                maxWidth: "100%",
+                borderRadius: 0,
+              }}
             >
               <input
                 value={moedaCrypto}
