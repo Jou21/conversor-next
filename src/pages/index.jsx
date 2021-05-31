@@ -7,10 +7,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
-
-import "font-awesome/css/font-awesome.min.css";
+import { FaBeer } from "react-icons/fa";
 
 import {
   Button,
@@ -484,7 +481,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
               fontSize: "30px",
             }}
           >
-            <FontAwesomeIcon style={{ color: "gray" }} icon={faExchangeAlt} />
+            <FaBeer />
           </div>
         </Divider>
       </Segment>
