@@ -139,13 +139,13 @@ export default function Home({ propriedades, cotacoesFiat }) {
       height: 70,
       minHeight: 70,
       borderRadius: 0,
-      width: "100%",
       padding: "0px",
+      textAlign: "right",
+      fontSize: "20px",
     }),
     valueContainer: (provided, state) => ({
       ...provided,
       height: "70px",
-      width: "100%",
       padding: "0px",
     }),
 
@@ -409,7 +409,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
     <div className="container">
       <div style={{ textAlign: "center", paddingBottom: "80px" }}>
         <h1 style={{ textAlign: "center" }}>
-          1{propriedades[1].symbol} ≅{" "}
+          1{`${propriedades[1].symbol}`.toUpperCase()} ≅{" "}
           {`${moedaFiat.toFixed(2)}`.replace(".", ",")} {selectMoedaFiat}
         </h1>
       </div>
