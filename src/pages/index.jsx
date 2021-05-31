@@ -7,6 +7,9 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
+
 import {
   Button,
   Divider,
@@ -419,7 +422,15 @@ export default function Home({ propriedades, cotacoesFiat }) {
                 placeholder={propriedades[1].name}
                 style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
               />
-              <i aria-hidden="true" className="dollar icon"></i>
+              <i
+                aria-hidden="true"
+                className="fa fa-usd"
+                style={{
+                  marginLeft: "-40px",
+                  marginTop: "20px",
+                  color: "gray",
+                }}
+              ></i>
             </div>
 
             <Select
@@ -442,7 +453,15 @@ export default function Home({ propriedades, cotacoesFiat }) {
                 placeholder={selectMoedaFiat}
                 style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
               />
-              <i aria-hidden="true" className="dollar icon"></i>
+              <i
+                aria-hidden="true"
+                className="fa fa-usd"
+                style={{
+                  marginLeft: "-40px",
+                  marginTop: "20px",
+                  color: "gray",
+                }}
+              ></i>
             </div>
 
             <Select
@@ -458,12 +477,12 @@ export default function Home({ propriedades, cotacoesFiat }) {
         <Divider vertical hidden>
           <div
             style={{
-              marginLeft: "4px",
-              marginTop: "-2px",
+              marginLeft: "0px",
+              marginTop: "-16px",
               fontSize: "30px",
             }}
           >
-            <i aria-hidden="false" className="fa fa-spinner fa-spin"></i>
+            <FontAwesomeIcon style={{ color: "gray" }} icon={faExchangeAlt} />
           </div>
         </Divider>
       </Segment>
