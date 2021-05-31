@@ -10,7 +10,7 @@ import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "../styles.module.css";
+import "font-awesome/css/font-awesome.min.css";
 
 import {
   Button,
