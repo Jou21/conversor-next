@@ -463,7 +463,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
               fontSize: "30px",
             }}
           >
-            <i aria-hidden="false" className="exchange icon grey"></i>
+            <i aria-hidden="false" className="fa fa-spinner fa-spin"></i>
           </div>
         </Divider>
       </Segment>

@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import "font-awesome/css/font-awesome.min.css";
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
