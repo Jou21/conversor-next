@@ -4,6 +4,8 @@ import Select from "react-select";
 
 import Link from "next/link";
 
+import axios from "axios";
+
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -20,11 +22,7 @@ import {
 
 import "semantic-ui-css/semantic.min.css";
 
-export default function Home({
-  propriedades,
-  cotacoesFiat,
-  stringImgMoedaCrypto,
-}) {
+export default function Home({ propriedades, cotacoesFiat }) {
   const valorUSD = cotacoesFiat.USDBRL.ask;
   const valorEUR = cotacoesFiat.EURBRL.ask;
 
@@ -42,9 +40,15 @@ export default function Home({
     {
       value: "BRL",
       label: (
-        <div>
+        <div style={{ fontSize: "20px", marginTop: "3px" }}>
           &nbsp;&nbsp;
-          <img src="/brl.svg" height="30px" width="30px" /> &nbsp;
+          <img
+            src="/brl.svg"
+            height="50px"
+            width="50px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
           {"BRL"}
         </div>
       ),
@@ -52,9 +56,15 @@ export default function Home({
     {
       value: "USD",
       label: (
-        <div>
+        <div style={{ fontSize: "20px", marginTop: "3px" }}>
           &nbsp;&nbsp;
-          <img src="/usd.svg" height="30px" width="30px" /> &nbsp;
+          <img
+            src="/usd.svg"
+            height="50px"
+            width="50px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
           {"USD"}
         </div>
       ),
@@ -62,9 +72,15 @@ export default function Home({
     {
       value: "EUR",
       label: (
-        <div>
+        <div style={{ fontSize: "20px", marginTop: "3px" }}>
           &nbsp;&nbsp;
-          <img src="/eur.svg" height="30px" width="30px" /> &nbsp;
+          <img
+            src="/eur.svg"
+            height="50px"
+            width="50px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
           {"EUR"}
         </div>
       ),
@@ -123,9 +139,243 @@ export default function Home({
       minHeight: 70,
       borderRadius: 0,
     }),
+    valueContainer: (provided, state) => ({
+      ...provided,
+      height: "70px",
+    }),
+
+    input: (provided, state) => ({
+      ...provided,
+      margin: "0px",
+    }),
+    indicatorSeparator: (state) => ({
+      display: "none",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: "70px",
+      width: "50px",
+    }),
   };
 
-  propriedades.map((moeda) => {
+  propriedades.map((moeda, index) => {
+    let imagem;
+    if (moeda.symbol.toUpperCase() == "BTC") {
+      imagem = (
+        <img
+          src="/BTC.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "ETH") {
+      imagem = (
+        <img
+          src="/ETH.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "USDT") {
+      imagem = (
+        <img
+          src="/USDT.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "ADA") {
+      imagem = (
+        <img
+          src="/ADA.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "BNB") {
+      imagem = (
+        <img
+          src="/BNB.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "XRP") {
+      imagem = (
+        <img
+          src="/XRP.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (moeda.symbol.toUpperCase() == "DOGE") {
+      imagem = (
+        <img
+          src="/DOGE.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "USDC") {
+      imagem = (
+        <img
+          src="/USDC.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "DOT") {
+      imagem = (
+        <img
+          src="/DOT.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "UNI") {
+      imagem = (
+        <img
+          src="/UNI.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "BCH") {
+      imagem = (
+        <img
+          src="/BCH.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (moeda.symbol.toUpperCase() == "LINK") {
+      imagem = (
+        <img
+          src="/LINK.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "LTC") {
+      imagem = (
+        <img
+          src="/LTC.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "XLM") {
+      imagem = (
+        <img
+          src="/XLM.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "ETC") {
+      imagem = (
+        <img
+          src="/ETC.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "SOL") {
+      imagem = (
+        <img
+          src="/SOL.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "BUSD") {
+      imagem = (
+        <img
+          src="/BUSD.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "VET") {
+      imagem = (
+        <img
+          src="/VET.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "WBTC") {
+      imagem = (
+        <img
+          src="/WBTC.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "THETA") {
+      imagem = (
+        <img
+          src="/THETA.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "EOS") {
+      imagem = (
+        <img
+          src="/EOS.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "TRX") {
+      imagem = (
+        <img
+          src="/TRX.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else if (`${moeda.symbol}`.toUpperCase() == "FIL") {
+      imagem = (
+        <img
+          src="/FIL.svg"
+          height="50px"
+          width="50px"
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    } else {
+      imagem = (
+        <img
+          src={`${moeda.image}`.replace("large", "small")}
+          style={{ marginTop: "-3px" }}
+        />
+      );
+    }
+
     const array = {
       value: moeda.name,
       label: (
@@ -133,9 +383,12 @@ export default function Home({
           href={`${selectMoedaFiat}/[id]`}
           as={`${selectMoedaFiat}/${moeda.symbol.toUpperCase()}`}
         >
-          <div>
+          <div
+            style={{ fontSize: "20px", marginTop: "3px", marginLeft: "-8px" }}
+          >
             &nbsp;&nbsp;
-            <img src={moeda.image} height="30px" width="30px" /> &nbsp;
+            {imagem}
+            &nbsp;
             {moeda.name}
           </div>
         </Link>
@@ -148,7 +401,10 @@ export default function Home({
   return (
     <div className="container">
       <div style={{ textAlign: "center", paddingBottom: "80px" }}>
-        <img src={stringImgMoedaCrypto} height="15%" width="15%" />
+        <h1 style={{ textAlign: "center" }}>
+          1{propriedades[1].symbol} ≅{" "}
+          {`${moedaFiat.toFixed(2)}`.replace(".", ",")} {selectMoedaFiat}
+        </h1>
       </div>
 
       <Segment>
@@ -225,7 +481,6 @@ export default function Home({
 
 export const getStaticProps = async () => {
   let arrayDadosBRL = [];
-  let arrayImagens = [];
 
   var i;
   for (i = 1; i < 2; i++) {
@@ -245,18 +500,10 @@ export const getStaticProps = async () => {
 
   const cotacoesFiat = dataCotacoesFiat;
 
-  const urlImgMoedaCrypto = `https://api.coinranking.com/v2/search-suggestions?query=ethereum`;
-
-  const responseUrlImgMoedaCrypto = await fetch(urlImgMoedaCrypto);
-  const dataUrlImgMoedaCrypto = await responseUrlImgMoedaCrypto.json();
-
-  const stringImgMoedaCrypto = dataUrlImgMoedaCrypto.data.coins[0].iconUrl;
-
   return {
     props: {
       propriedades: arrayDadosBRL,
       cotacoesFiat: cotacoesFiat,
-      stringImgMoedaCrypto: stringImgMoedaCrypto,
     },
     revalidate: 10000,
   };

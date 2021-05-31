@@ -45,9 +45,15 @@ export default function Moeda({
     {
       value: "BRL",
       label: (
-        <div>
+        <div style={{ fontSize: "20px", marginTop: "3px" }}>
           &nbsp;&nbsp;
-          <img src="/brl.svg" height="30px" width="30px" /> &nbsp;
+          <img
+            src="/brl.svg"
+            height="30px"
+            width="30px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
           {"BRL"}
         </div>
       ),
@@ -55,9 +61,15 @@ export default function Moeda({
     {
       value: "USD",
       label: (
-        <div>
+        <div style={{ fontSize: "20px", marginTop: "3px" }}>
           &nbsp;&nbsp;
-          <img src="/usd.svg" height="30px" width="30px" /> &nbsp;
+          <img
+            src="/usd.svg"
+            height="30px"
+            width="30px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
           {"USD"}
         </div>
       ),
@@ -65,9 +77,15 @@ export default function Moeda({
     {
       value: "EUR",
       label: (
-        <div>
+        <div style={{ fontSize: "20px", marginTop: "3px" }}>
           &nbsp;&nbsp;
-          <img src="/eur.svg" height="30px" width="30px" /> &nbsp;
+          <img
+            src="/eur.svg"
+            height="30px"
+            width="30px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
           {"EUR"}
         </div>
       ),
@@ -124,6 +142,23 @@ export default function Moeda({
       minHeight: 70,
       borderRadius: 0,
     }),
+    valueContainer: (provided, state) => ({
+      ...provided,
+      height: "70px",
+    }),
+
+    input: (provided, state) => ({
+      ...provided,
+      margin: "0px",
+    }),
+    indicatorSeparator: (state) => ({
+      display: "none",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: "70px",
+      width: "50px",
+    }),
   };
 
   propriedades.map((moeda) => {
@@ -134,9 +169,9 @@ export default function Moeda({
           href={`../${selectMoedaFiat}/[id]`}
           as={`../${selectMoedaFiat}/${moeda.symbol.toUpperCase()}`}
         >
-          <div>
+          <div style={{ fontSize: "20px" }}>
             &nbsp;&nbsp;
-            <img src={moeda.image} height="30px" width="30px" /> &nbsp;
+            <img src={`${moeda.image}`.replace("large", "small")} /> &nbsp;
             {moeda.name}
           </div>
         </Link>

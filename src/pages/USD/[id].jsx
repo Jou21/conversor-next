@@ -45,9 +45,15 @@ export default function Moeda({
     {
       value: "BRL",
       label: (
-        <div>
+        <div style={{ fontSize: "20px", marginTop: "3px" }}>
           &nbsp;&nbsp;
-          <img src="/brl.svg" height="30px" width="30px" /> &nbsp;
+          <img
+            src="/brl.svg"
+            height="30px"
+            width="30px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
           {"BRL"}
         </div>
       ),
@@ -55,9 +61,15 @@ export default function Moeda({
     {
       value: "USD",
       label: (
-        <div>
+        <div style={{ fontSize: "20px", marginTop: "3px" }}>
           &nbsp;&nbsp;
-          <img src="/usd.svg" height="30px" width="30px" /> &nbsp;
+          <img
+            src="/usd.svg"
+            height="30px"
+            width="30px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
           {"USD"}
         </div>
       ),
@@ -65,9 +77,15 @@ export default function Moeda({
     {
       value: "EUR",
       label: (
-        <div>
+        <div style={{ fontSize: "20px", marginTop: "3px" }}>
           &nbsp;&nbsp;
-          <img src="/eur.svg" height="30px" width="30px" /> &nbsp;
+          <img
+            src="/eur.svg"
+            height="30px"
+            width="30px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
           {"EUR"}
         </div>
       ),
