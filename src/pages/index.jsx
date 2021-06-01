@@ -88,6 +88,11 @@ export default function Home({ propriedades, cotacoesFiat }) {
     },
   ];
 
+  const handleChangeSelectMoedaCrypto = (e) => {
+    console.log("FUNCIONOU", e.symbol);
+    window.location.replace(`../${selectMoedaFiat}/${e.symbol.toUpperCase()}`);
+  };
+
   const handleChangeSelectMoedaFiat = (e) => {
     setSelectMoedaFiat(e.value.toUpperCase());
 
@@ -400,18 +405,53 @@ export default function Home({ propriedades, cotacoesFiat }) {
           </div>
         </Link>
       ),
+      labelSemLink: (
+        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "-3px" }}>
+          &nbsp;&nbsp;
+          {imagem}
+          &nbsp;
+          {moeda.name}
+        </div>
+      ),
+      symbol: moeda.symbol,
     };
 
     options.push(array);
   });
 
   return (
-    <div className="container">
-      <div style={{ textAlign: "center", paddingBottom: "80px" }}>
-        <h1 style={{ textAlign: "center" }}>
+    <div
+      className="container"
+      style={{
+        maxWidth: "1640px",
+      }}
+    >
+      <div
+        style={{
+          textAlign: "center",
+          paddingBottom: "40px",
+          paddingTop: "50px",
+        }}
+      >
+        <div
+          style={{
+            textAlign: "center",
+            color: "lightslategray",
+            fontSize: "25px",
+          }}
+        >
           1{`${propriedades[1].symbol}`.toUpperCase()} ≅{" "}
           {`${moedaFiat.toFixed(2)}`.replace(".", ",")} {selectMoedaFiat}
-        </h1>
+        </div>
+      </div>
+
+      <div style={{ textAlign: "center" }}>
+        <img
+          src="/ETH.svg"
+          style={{ marginTop: "0px", marginBottom: "40px" }}
+          height="8%"
+          width="8%"
+        />
       </div>
 
       <Segment>
@@ -445,9 +485,10 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
             <Select
               instanceId="0"
-              defaultValue={options[1]}
+              placeholder={options[1].labelSemLink}
               options={options}
               styles={customStyles}
+              onChange={handleChangeSelectMoedaCrypto}
             />
           </Grid.Column>
 
@@ -498,11 +539,11 @@ export default function Home({ propriedades, cotacoesFiat }) {
         </Divider>
       </Segment>
 
-      <div style={{ paddingTop: "500px" }}></div>
-
-      <Grafico
-        simbolo={`${propriedades[0].symbol.toUpperCase()}${selectMoedaFiat}`}
-      />
+      <div style={{ marginTop: "500px" }}>
+        <Grafico
+          simbolo={`${propriedades[0].symbol.toUpperCase()}${selectMoedaFiat}`}
+        />
+      </div>
     </div>
   );
 }
