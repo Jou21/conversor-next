@@ -43,19 +43,6 @@ export default function Home({ propriedades, cotacoesFiat }) {
     {
       value: "BRL",
       label: (
-        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "12px" }}>
-          &nbsp;&nbsp;
-          <img
-            src="/brl.svg"
-            height="50px"
-            width="50px"
-            style={{ marginTop: "-3px" }}
-          />{" "}
-          &nbsp;
-          {"BRL"}
-        </div>
-      ),
-      labelSemLink: (
         <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "22px" }}>
           &nbsp;&nbsp;
           <img
@@ -72,19 +59,6 @@ export default function Home({ propriedades, cotacoesFiat }) {
     {
       value: "USD",
       label: (
-        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "12px" }}>
-          &nbsp;&nbsp;
-          <img
-            src="/usd.svg"
-            height="50px"
-            width="50px"
-            style={{ marginTop: "-3px" }}
-          />{" "}
-          &nbsp;
-          {"USD"}
-        </div>
-      ),
-      labelSemLink: (
         <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "22px" }}>
           &nbsp;&nbsp;
           <img
@@ -101,19 +75,6 @@ export default function Home({ propriedades, cotacoesFiat }) {
     {
       value: "EUR",
       label: (
-        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "12px" }}>
-          &nbsp;&nbsp;
-          <img
-            src="/eur.svg"
-            height="50px"
-            width="50px"
-            style={{ marginTop: "-3px" }}
-          />{" "}
-          &nbsp;
-          {"EUR"}
-        </div>
-      ),
-      labelSemLink: (
         <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "22px" }}>
           &nbsp;&nbsp;
           <img
@@ -193,8 +154,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
     valueContainer: (provided, state) => ({
       ...provided,
       height: "70px",
-      paddingLeft: "1px",
-
+      paddingLeft: "10px",
       width: "100%",
     }),
 
@@ -451,7 +411,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
         </Link>
       ),
       labelSemLink: (
-        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "30px" }}>
+        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "20px" }}>
           &nbsp;&nbsp;
           {imagem}
           &nbsp;
@@ -578,7 +538,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
             <Select
               instanceId="1"
-              placeholder={options2[0].labelSemLink}
+              placeholder={options2[0].label}
               options={options2}
               styles={customStyles}
               onChange={handleChangeSelectMoedaFiat}
