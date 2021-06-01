@@ -43,7 +43,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
     {
       value: "BRL",
       label: (
-        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "22px" }}>
+        <div style={{ fontSize: "22px", marginTop: "3px", marginLeft: "0px" }}>
           &nbsp;&nbsp;
           <img
             src="/brl.svg"
@@ -59,7 +59,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
     {
       value: "USD",
       label: (
-        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "22px" }}>
+        <div style={{ fontSize: "22px", marginTop: "3px", marginLeft: "0px" }}>
           &nbsp;&nbsp;
           <img
             src="/usd.svg"
@@ -75,7 +75,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
     {
       value: "EUR",
       label: (
-        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "22px" }}>
+        <div style={{ fontSize: "22px", marginTop: "3px", marginLeft: "0px" }}>
           &nbsp;&nbsp;
           <img
             src="/eur.svg"
@@ -100,13 +100,13 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
     if (e.value.toUpperCase() === "USD") {
       const num = (moedaCrypto * propriedades[1].current_price) / valorUSD;
-      setMoedaFiat(num);
+      setMoedaFiat(num.toFixed(2));
     } else if (e.value.toUpperCase() === "EUR") {
       const num = (moedaCrypto * propriedades[1].current_price) / valorEUR;
-      setMoedaFiat(num);
+      setMoedaFiat(num.toFixed(2));
     } else {
       const num = moedaCrypto * propriedades[1].current_price;
-      setMoedaFiat(num);
+      setMoedaFiat(num.toFixed(2));
     }
   };
 
@@ -115,13 +115,13 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
     if (selectMoedaFiat === "USD") {
       const num = (propriedades[1].current_price * e.target.value) / valorUSD;
-      setMoedaFiat(num);
+      setMoedaFiat(num.toFixed(2));
     } else if (selectMoedaFiat === "EUR") {
       const num = (propriedades[1].current_price * e.target.value) / valorEUR;
-      setMoedaFiat(num);
+      setMoedaFiat(num.toFixed(2));
     } else {
       const num = propriedades[1].current_price * e.target.value;
-      setMoedaFiat(num);
+      setMoedaFiat(num.toFixed(2));
     }
   };
 
@@ -147,14 +147,15 @@ export default function Home({ propriedades, cotacoesFiat }) {
       minHeight: 90,
       width: "100%",
       borderRadius: 0,
-      paddingLeft: "1px",
+      padding: "0px 0px 0px 10px",
+      position: "absolut",
       textAlign: "right",
       fontSize: "30px",
     }),
     valueContainer: (provided, state) => ({
       ...provided,
       height: "70px",
-      paddingLeft: "10px",
+      padding: "0px",
       width: "100%",
     }),
 
@@ -162,7 +163,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
       ...provided,
       margin: "0px",
       width: "100%",
-      paddingLeft: "1px",
+      padding: "0px",
     }),
     indicatorSeparator: (state) => ({
       display: "none",
@@ -170,8 +171,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
     indicatorsContainer: (provided, state) => ({
       ...provided,
       height: "90px",
-      width: "83px",
-      paddingLeft: "1px",
+      width: "45px",
+      padding: "0px",
     }),
   };
 
@@ -401,9 +402,13 @@ export default function Home({ propriedades, cotacoesFiat }) {
           as={`${selectMoedaFiat}/${moeda.symbol.toUpperCase()}`}
         >
           <div
-            style={{ fontSize: "20px", marginTop: "3px", marginLeft: "20px" }}
+            style={{
+              fontSize: "22px",
+              marginTop: "3px",
+              marginLeft: "0px",
+              padding: "0px",
+            }}
           >
-            &nbsp;&nbsp;
             {imagem}
             &nbsp;
             {moeda.name}
@@ -411,8 +416,14 @@ export default function Home({ propriedades, cotacoesFiat }) {
         </Link>
       ),
       labelSemLink: (
-        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "20px" }}>
-          &nbsp;&nbsp;
+        <div
+          style={{
+            fontSize: "22px",
+            marginTop: "3px",
+            marginLeft: "0px",
+            padding: "0px",
+          }}
+        >
           {imagem}
           &nbsp;
           {moeda.name}
@@ -425,12 +436,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
   });
 
   return (
-    <div
-      className="container"
-      style={{
-        maxWidth: "1640px",
-      }}
-    >
+    <div className="container">
       <div
         style={{
           textAlign: "center",
@@ -445,8 +451,17 @@ export default function Home({ propriedades, cotacoesFiat }) {
             fontSize: "25px",
           }}
         >
-          1{`${propriedades[1].symbol}`.toUpperCase()} ≅{" "}
-          {`${moedaFiat.toFixed(2)}`.replace(".", ",")} {selectMoedaFiat}
+          1 {`${propriedades[1].symbol}`.toUpperCase()} ≅{" "}
+          {selectMoedaFiat == "BRL"
+            ? `${propriedades[1].current_price.toFixed(2)}`.replace(".", ",")
+            : selectMoedaFiat == "USD"
+            ? `${(propriedades[1].current_price / valorUSD).toFixed(
+                2
+              )}`.replace(".", ",")
+            : `${(propriedades[1].current_price / valorEUR).toFixed(
+                2
+              )}`.replace(".", ",")}{" "}
+          {selectMoedaFiat}
         </div>
       </div>
 
@@ -463,7 +478,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
         <Grid columns={2} relaxed="very" stackable verticalAlign="top">
           <Grid.Column>
             <div
-              className="ui massive icon input"
+              className="ui input"
               style={{
                 width: "100%",
                 maxWidth: "100%",
@@ -472,7 +487,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
             >
               <input
                 value={moedaCrypto}
-                className={styles.input}
+                className={(styles.ui.icon, styles.input)}
                 onChange={handleChangeValorMoedaCrypto}
                 type="number"
                 placeholder={propriedades[1].name}
@@ -480,16 +495,18 @@ export default function Home({ propriedades, cotacoesFiat }) {
                   width: "100%",
                   maxWidth: "100%",
                   borderRadius: 0,
-                  fontSize: "50px",
-                  fontStyle: "italic",
+                  fontSize: "60px",
+
+                  fontFamily: "sans-serif",
+                  padding: "15px 42px 15px 19px",
                 }}
               />
               <i
                 style={{
-                  marginLeft: "-90px",
-                  marginTop: "40px",
+                  marginLeft: "-50px",
+                  marginTop: "29px",
                   color: "gray",
-                  fontSize: "50px",
+                  fontSize: "48px",
                 }}
               >
                 <FiDollarSign />
@@ -507,7 +524,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
           <Grid.Column verticalAlign="bottom">
             <div
-              className="ui massive icon input"
+              className="ui input"
               style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
             >
               <input
@@ -520,16 +537,18 @@ export default function Home({ propriedades, cotacoesFiat }) {
                   width: "100%",
                   maxWidth: "100%",
                   borderRadius: 0,
-                  fontSize: "50px",
-                  fontStyle: "italic",
+                  fontSize: "60px",
+
+                  fontFamily: "arial",
+                  padding: "15px 42px 15px 19px",
                 }}
               />
               <i
                 style={{
-                  marginLeft: "-90px",
-                  marginTop: "40px",
+                  marginLeft: "-50px",
+                  marginTop: "29px",
                   color: "gray",
-                  fontSize: "50px",
+                  fontSize: "48px",
                 }}
               >
                 <FiDollarSign />
