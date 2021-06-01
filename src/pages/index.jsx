@@ -10,6 +10,8 @@ import ReactDOM from "react-dom";
 import { FaExchangeAlt } from "react-icons/fa";
 import { FiDollarSign } from "react-icons/fi";
 
+import styles from "../styles.module.css";
+
 import {
   Button,
   Divider,
@@ -41,7 +43,20 @@ export default function Home({ propriedades, cotacoesFiat }) {
     {
       value: "BRL",
       label: (
-        <div style={{ fontSize: "20px", marginTop: "3px" }}>
+        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "12px" }}>
+          &nbsp;&nbsp;
+          <img
+            src="/brl.svg"
+            height="50px"
+            width="50px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
+          {"BRL"}
+        </div>
+      ),
+      labelSemLink: (
+        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "22px" }}>
           &nbsp;&nbsp;
           <img
             src="/brl.svg"
@@ -57,7 +72,20 @@ export default function Home({ propriedades, cotacoesFiat }) {
     {
       value: "USD",
       label: (
-        <div style={{ fontSize: "20px", marginTop: "3px" }}>
+        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "12px" }}>
+          &nbsp;&nbsp;
+          <img
+            src="/usd.svg"
+            height="50px"
+            width="50px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
+          {"USD"}
+        </div>
+      ),
+      labelSemLink: (
+        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "22px" }}>
           &nbsp;&nbsp;
           <img
             src="/usd.svg"
@@ -73,7 +101,20 @@ export default function Home({ propriedades, cotacoesFiat }) {
     {
       value: "EUR",
       label: (
-        <div style={{ fontSize: "20px", marginTop: "3px" }}>
+        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "12px" }}>
+          &nbsp;&nbsp;
+          <img
+            src="/eur.svg"
+            height="50px"
+            width="50px"
+            style={{ marginTop: "-3px" }}
+          />{" "}
+          &nbsp;
+          {"EUR"}
+        </div>
+      ),
+      labelSemLink: (
+        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "22px" }}>
           &nbsp;&nbsp;
           <img
             src="/eur.svg"
@@ -141,32 +182,36 @@ export default function Home({ propriedades, cotacoesFiat }) {
   const customStyles = {
     control: (base) => ({
       ...base,
-      height: 70,
-      minHeight: 70,
+      height: 90,
+      minHeight: 90,
+      width: "100%",
       borderRadius: 0,
-      padding: "0px",
+      paddingLeft: "1px",
       textAlign: "right",
-      fontSize: "20px",
+      fontSize: "30px",
     }),
     valueContainer: (provided, state) => ({
       ...provided,
       height: "70px",
-      padding: "0px",
+      paddingLeft: "1px",
+
+      width: "100%",
     }),
 
     input: (provided, state) => ({
       ...provided,
       margin: "0px",
       width: "100%",
-      padding: "3px",
+      paddingLeft: "1px",
     }),
     indicatorSeparator: (state) => ({
       display: "none",
     }),
     indicatorsContainer: (provided, state) => ({
       ...provided,
-      height: "70px",
-      width: "50px",
+      height: "90px",
+      width: "83px",
+      paddingLeft: "1px",
     }),
   };
 
@@ -396,7 +441,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
           as={`${selectMoedaFiat}/${moeda.symbol.toUpperCase()}`}
         >
           <div
-            style={{ fontSize: "20px", marginTop: "3px", marginLeft: "-3px" }}
+            style={{ fontSize: "20px", marginTop: "3px", marginLeft: "20px" }}
           >
             &nbsp;&nbsp;
             {imagem}
@@ -406,7 +451,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
         </Link>
       ),
       labelSemLink: (
-        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "-3px" }}>
+        <div style={{ fontSize: "20px", marginTop: "3px", marginLeft: "30px" }}>
           &nbsp;&nbsp;
           {imagem}
           &nbsp;
@@ -467,16 +512,24 @@ export default function Home({ propriedades, cotacoesFiat }) {
             >
               <input
                 value={moedaCrypto}
+                className={styles.input}
                 onChange={handleChangeValorMoedaCrypto}
                 type="number"
                 placeholder={propriedades[1].name}
-                style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
+                style={{
+                  width: "100%",
+                  maxWidth: "100%",
+                  borderRadius: 0,
+                  fontSize: "50px",
+                  fontStyle: "italic",
+                }}
               />
               <i
                 style={{
-                  marginLeft: "-45px",
-                  marginTop: "20px",
+                  marginLeft: "-90px",
+                  marginTop: "40px",
                   color: "gray",
+                  fontSize: "50px",
                 }}
               >
                 <FiDollarSign />
@@ -499,16 +552,24 @@ export default function Home({ propriedades, cotacoesFiat }) {
             >
               <input
                 value={moedaFiat}
+                className={styles.input}
                 onChange={handleChangeValorMoedaFiat}
                 type="number"
                 placeholder={selectMoedaFiat}
-                style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
+                style={{
+                  width: "100%",
+                  maxWidth: "100%",
+                  borderRadius: 0,
+                  fontSize: "50px",
+                  fontStyle: "italic",
+                }}
               />
               <i
                 style={{
-                  marginLeft: "-45px",
-                  marginTop: "20px",
+                  marginLeft: "-90px",
+                  marginTop: "40px",
                   color: "gray",
+                  fontSize: "50px",
                 }}
               >
                 <FiDollarSign />
@@ -517,7 +578,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
             <Select
               instanceId="1"
-              defaultValue={options2[0]}
+              placeholder={options2[0].labelSemLink}
               options={options2}
               styles={customStyles}
               onChange={handleChangeSelectMoedaFiat}
