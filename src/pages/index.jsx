@@ -10,7 +10,9 @@ import ReactDOM from "react-dom";
 import { FaExchangeAlt } from "react-icons/fa";
 import { FiDollarSign } from "react-icons/fi";
 
-import styles from "../styles.module.css";
+import styles from "../styles.module.scss";
+
+import useWindowDimensions from "../components/TamanhoDaTela";
 
 import {
   Button,
@@ -28,6 +30,8 @@ import "semantic-ui-css/semantic.min.css";
 export default function Home({ propriedades, cotacoesFiat }) {
   const valorUSD = cotacoesFiat.USDBRL.ask;
   const valorEUR = cotacoesFiat.EURBRL.ask;
+
+  const { height, width } = useWindowDimensions();
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
@@ -143,14 +147,14 @@ export default function Home({ propriedades, cotacoesFiat }) {
   const customStyles = {
     control: (base) => ({
       ...base,
-      height: 90,
-      minHeight: 90,
+      height: 100,
+      minHeight: 100,
       width: "100%",
       borderRadius: 0,
       padding: "0px 0px 0px 10px",
-      position: "absolut",
       textAlign: "right",
       fontSize: "30px",
+      marginBottom: "3px",
     }),
     valueContainer: (provided, state) => ({
       ...provided,
@@ -170,7 +174,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
     }),
     indicatorsContainer: (provided, state) => ({
       ...provided,
-      height: "90px",
+      height: "100px",
       width: "45px",
       padding: "0px",
     }),
@@ -407,6 +411,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
               marginTop: "3px",
               marginLeft: "0px",
               padding: "0px",
+              position: "absolut",
+              zIndex: "10",
             }}
           >
             {imagem}
@@ -436,7 +442,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
   });
 
   return (
-    <div className="container">
+    <div className="container" style={{ maxWidth: "1300px" }}>
       <div
         style={{
           textAlign: "center",
@@ -449,6 +455,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
             textAlign: "center",
             color: "lightslategray",
             fontSize: "25px",
+            fontFamily: "arial",
           }}
         >
           1 {`${propriedades[1].symbol}`.toUpperCase()} ≅{" "}
@@ -468,7 +475,11 @@ export default function Home({ propriedades, cotacoesFiat }) {
       <div style={{ textAlign: "center" }}>
         <img
           src="/ETH.svg"
-          style={{ marginTop: "0px", marginBottom: "40px" }}
+          style={{
+            marginTop: "0px",
+            marginBottom: "40px",
+            minWidth: "100px",
+          }}
           height="8%"
           width="8%"
         />
@@ -480,6 +491,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
             <div
               className="ui input"
               style={{
+                marginTop: "3px",
                 width: "100%",
                 maxWidth: "100%",
                 borderRadius: 0,
@@ -525,7 +537,12 @@ export default function Home({ propriedades, cotacoesFiat }) {
           <Grid.Column verticalAlign="bottom">
             <div
               className="ui input"
-              style={{ width: "100%", maxWidth: "100%", borderRadius: 0 }}
+              style={{
+                marginTop: "3px",
+                width: "100%",
+                maxWidth: "100%",
+                borderRadius: 0,
+              }}
             >
               <input
                 value={moedaFiat}
@@ -570,8 +587,10 @@ export default function Home({ propriedades, cotacoesFiat }) {
             style={{
               marginLeft: "0px",
               marginTop: "-16px",
-              fontSize: "30px",
+              fontSize: "33px",
               color: "gray",
+              zIndex: "1",
+              position: "relative",
             }}
           >
             <FaExchangeAlt />
@@ -579,9 +598,35 @@ export default function Home({ propriedades, cotacoesFiat }) {
         </Divider>
       </Segment>
 
-      <div style={{ marginTop: "500px" }}>
+      <div
+        style={{
+          textAlign: "center",
+          marginTop: "100px",
+        }}
+      >
+        <div>
+          <button style={{ width: "280px" }} className={styles.button}>
+            <span>
+              <div style={{ textAlign: "center" }}>
+                <img
+                  src="/TradingViewBranco.svg"
+                  style={{
+                    width: "50px",
+                    marginTop: "-7px",
+                  }}
+                  height="8%"
+                  width="8%"
+                />{" "}
+                TradingView
+              </div>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div style={{ marginTop: height - 745 }}>
         <Grafico
-          simbolo={`${propriedades[0].symbol.toUpperCase()}${selectMoedaFiat}`}
+          simbolo={`${propriedades[1].symbol.toUpperCase()}${selectMoedaFiat}`}
         />
       </div>
     </div>
