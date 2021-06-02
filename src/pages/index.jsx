@@ -41,6 +41,14 @@ export default function Home({ propriedades, cotacoesFiat }) {
     setMoedaFiat(propriedades[1].current_price);
   }, [propriedades]);
 
+  function handleScroll() {
+    window.scroll({
+      top: document.body.offsetHeight,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+
   const options = [];
 
   const options2 = [
@@ -605,7 +613,11 @@ export default function Home({ propriedades, cotacoesFiat }) {
         }}
       >
         <div>
-          <button style={{ width: "280px" }} className={styles.button}>
+          <button
+            onClick={handleScroll}
+            style={{ width: "280px" }}
+            className={styles.button}
+          >
             <span>
               <div style={{ textAlign: "center" }}>
                 <img
@@ -629,6 +641,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
           simbolo={`${propriedades[1].symbol.toUpperCase()}${selectMoedaFiat}`}
         />
       </div>
+      <div style={{ height: "60px" }}></div>
     </div>
   );
 }

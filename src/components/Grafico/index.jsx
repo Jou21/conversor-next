@@ -11,7 +11,7 @@ export default function Grafico(props) {
     scriptNovo.onload = function () {
       new TradingView.widget({
         width: "auto",
-        height: "800px",
+        height: "850px",
         symbol: `${props.simbolo}`,
         interval: "D",
         timezone: "America/Sao_Paulo",
