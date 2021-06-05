@@ -12,8 +12,6 @@ import { FiDollarSign } from "react-icons/fi";
 
 import styles from "../styles.module.scss";
 
-import useWindowDimensions from "../components/TamanhoDaTela";
-
 import {
   Button,
   Divider,
@@ -30,8 +28,6 @@ import "semantic-ui-css/semantic.min.css";
 export default function Home({ propriedades, cotacoesFiat }) {
   const valorUSD = cotacoesFiat.USDBRL.ask;
   const valorEUR = cotacoesFiat.EURBRL.ask;
-
-  const { height, width } = useWindowDimensions();
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
@@ -628,7 +624,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
         </div>
       </div>
 
-      <div style={{ marginTop: height - 745 }}>
+      <div style={{ marginTop: "250px" }}>
         <Grafico
           simbolo={`${propriedades[1].symbol.toUpperCase()}${selectMoedaFiat}`}
         />
