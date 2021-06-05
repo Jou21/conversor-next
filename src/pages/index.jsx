@@ -492,7 +492,14 @@ export default function Home({ propriedades, cotacoesFiat }) {
         />
       </div>
 
-      <Segment>
+      <Segment
+        style={{
+          padding: "0px 0px 0px 0px",
+          background: "white",
+          marginLeft: "-25px",
+          marginRight: "-25px",
+        }}
+      >
         <Grid columns={2} relaxed="very" stackable verticalAlign="top">
           <Grid.Column>
             <div
