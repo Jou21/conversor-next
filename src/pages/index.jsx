@@ -155,8 +155,9 @@ export default function Home({ propriedades, cotacoesFiat }) {
   const customStyles = {
     control: (base) => ({
       ...base,
-      height: 100,
-      minHeight: 100,
+      height: "10vw",
+      maxHeight: "100px",
+      minHeight: "65px",
       width: "100%",
       borderRadius: 0,
       padding: "0px 0px 0px 10px",
@@ -166,7 +167,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
     }),
     valueContainer: (provided, state) => ({
       ...provided,
-      height: "70px",
+      height: "100%",
       padding: "0px",
       width: "100%",
     }),
@@ -182,8 +183,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
     }),
     indicatorsContainer: (provided, state) => ({
       ...provided,
-      height: "100px",
-      width: "45px",
+      height: "100%",
+      width: "9.7%",
       padding: "0px",
     }),
   };
@@ -512,27 +513,22 @@ export default function Home({ propriedades, cotacoesFiat }) {
                 type="number"
                 placeholder={propriedades[1].name}
                 style={{
-                  width: "100%",
-                  maxWidth: "100%",
                   borderRadius: 0,
-                  fontSize: "60px",
-
                   fontFamily: "sans-serif",
-                  padding: "15px 42px 15px 19px",
+                  padding: "14px 42px 14px 19px",
                 }}
               />
               <i
+                className={styles.tamanho}
                 style={{
-                  marginLeft: "-50px",
-                  marginTop: "29px",
+                  marginInlineStart: "-10%",
+                  marginTop: "25px",
                   color: "gray",
-                  fontSize: "48px",
                 }}
               >
                 <FiDollarSign />
               </i>
             </div>
-
             <Select
               instanceId="0"
               placeholder={options[1].labelSemLink}
@@ -559,21 +555,17 @@ export default function Home({ propriedades, cotacoesFiat }) {
                 type="number"
                 placeholder={selectMoedaFiat}
                 style={{
-                  width: "100%",
-                  maxWidth: "100%",
                   borderRadius: 0,
-                  fontSize: "60px",
-
-                  fontFamily: "arial",
-                  padding: "15px 42px 15px 19px",
+                  fontFamily: "sans-serif",
+                  padding: "14px 42px 14px 19px",
                 }}
               />
               <i
+                className={styles.tamanho}
                 style={{
-                  marginLeft: "-50px",
-                  marginTop: "29px",
+                  marginInlineStart: "-10%",
+                  marginTop: "25px",
                   color: "gray",
-                  fontSize: "48px",
                 }}
               >
                 <FiDollarSign />
@@ -594,7 +586,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
           <div
             style={{
               marginLeft: "0px",
-              marginTop: "-16px",
+              marginTop: "-18px",
               fontSize: "33px",
               color: "gray",
               zIndex: "1",
