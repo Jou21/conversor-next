@@ -39,7 +39,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
   function handleScroll() {
     window.scroll({
-      top: document.body.offsetHeight,
+      top: 1100,
       left: 0,
       behavior: "smooth",
     });
