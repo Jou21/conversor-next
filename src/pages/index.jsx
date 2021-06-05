@@ -433,6 +433,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
             marginTop: "3px",
             marginLeft: "0px",
             padding: "0px",
+            position: "absolut",
+            zIndex: "10",
           }}
         >
           {imagem}
@@ -526,6 +528,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
               </i>
             </div>
             <Select
+              className={styles.frente}
               instanceId="0"
               placeholder={options[1].labelSemLink}
               options={options}
