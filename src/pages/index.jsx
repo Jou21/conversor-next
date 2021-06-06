@@ -497,8 +497,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
         style={{
           padding: "0px 0px 0px 0px",
           color: "white",
-          marginLeft: "-25px",
-          marginRight: "-25px",
+          marginLeft: "0px",
+          marginRight: "0px",
         }}
       >
         <Grid columns={2} relaxed="very" stackable verticalAlign="top">
