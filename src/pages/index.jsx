@@ -493,9 +493,10 @@ export default function Home({ propriedades, cotacoesFiat }) {
       </div>
 
       <Segment
+        basic
         style={{
           padding: "0px 0px 0px 0px",
-          background: "white",
+          color: "white",
           marginLeft: "-25px",
           marginRight: "-25px",
         }}
