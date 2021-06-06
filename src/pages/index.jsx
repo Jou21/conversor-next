@@ -24,6 +24,7 @@ import {
 } from "semantic-ui-react";
 
 import "semantic-ui-css/semantic.min.css";
+import axios from "axios";
 
 export default function Home({ propriedades, cotacoesFiat }) {
   const valorUSD = cotacoesFiat.USDBRL.ask;
@@ -646,8 +647,14 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
 export const getStaticProps = async () => {
   let arrayDadosBRL = [];
+  const URL = process.env.URL;
 
-  var i;
+  const response = await axios.get(`${URL}/api/moedas`);
+  const data = await response.data;
+  console.log(data.data[1]);
+  arrayDadosBRL = arrayDadosBRL.concat(data.data);
+
+  /* var i;
   for (i = 1; i < 2; i++) {
     const urlCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
 
@@ -655,7 +662,7 @@ export const getStaticProps = async () => {
     const data = await response.json();
 
     arrayDadosBRL = arrayDadosBRL.concat(data);
-  }
+  } */
 
   const urlCotacoesFiat =
     "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL";
