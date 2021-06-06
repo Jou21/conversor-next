@@ -2,7 +2,7 @@ async function moedas(req, res) {
   var arrayDados = [];
 
   var i;
-  for (i = 1; i < 35; i++) {
+  for (i = 1; i < 3; i++) {
     const urlImagensCoingecko = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=${i}&sparkline=false`;
 
     const responseUrlImagensCoingecko = await fetch(urlImagensCoingecko);
