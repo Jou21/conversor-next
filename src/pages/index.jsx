@@ -496,7 +496,6 @@ export default function Home({ propriedades, cotacoesFiat }) {
         basic
         style={{
           padding: "0px 0px 0px 0px",
-          color: "white",
           marginLeft: "0px",
           marginRight: "0px",
         }}
