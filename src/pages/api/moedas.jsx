@@ -1,4 +1,4 @@
-async function api(req, res) {
+async function moedas(req, res) {
   var arrayDados = [];
 
   var i;
@@ -18,4 +18,4 @@ async function api(req, res) {
   });
 }
 
-export default api;
+export default moedas;
