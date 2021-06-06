@@ -649,7 +649,7 @@ export const getStaticProps = async () => {
   let arrayDadosBRL = [];
   const URL = process.env.URL;
 
-  const response = await axios.get(`/api/moedas`);
+  const response = await axios.get(`${URL}/api/moedas`);
   const data = await response.data;
   console.log(data.data[1]);
   arrayDadosBRL = arrayDadosBRL.concat(data.data);
