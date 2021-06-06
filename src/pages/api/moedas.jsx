@@ -11,7 +11,7 @@ async function moedas(req, res) {
     arrayDados = arrayDados.concat(dataImagensCoingecko);
   }
 
-  res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate");
+  res.setHeader("Cache-Control", "s-maxage=10000, stale-while-revalidate");
 
   res.json({
     date: arrayDados,
