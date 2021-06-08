@@ -21,10 +21,14 @@ import {
   Input,
   Dropdown,
   Icon,
+  Header,
 } from "semantic-ui-react";
 
 import "semantic-ui-css/semantic.min.css";
 //import axios from "axios";
+
+import content from "../pages/api/frontaid.content.json";
+import Parser from "html-react-parser";
 
 export default function Home({ propriedades, cotacoesFiat }) {
   const valorUSD = cotacoesFiat.USDBRL.ask;
@@ -639,6 +643,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
         <Grafico
           simbolo={`${propriedades[1].symbol.toUpperCase()}${selectMoedaFiat}`}
         />
+
+        <>{Parser(content.pages[0].description.brl)}</>
       </div>
       <div style={{ height: "60px" }}></div>
     </div>

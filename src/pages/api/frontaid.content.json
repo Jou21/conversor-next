@@ -1,0 +1,2028 @@
+{
+  "pages": [
+    {
+      "id": "bitcoin",
+      "symbol": "btc",
+      "description": {
+        "usd": "",
+        "brl": "<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><strong><span style='font-size:29px;font-family:'Arial',sans-serif;'>O Que &Eacute; Bitcoin (BTC)?</span></strong></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>Bitcoin &eacute; uma criptomoeda descentralizada originalmente descrita em 2008 em seu <a href='https://coinmarketcap.com/alexandria/glossary/whitepaper'><span style='color:blue;'>whitepaper</span></a> por uma pessoa, ou grupo de pessoas, usando o pseud&ocirc;nimo <a href='https://coinmarketcap.com/alexandria/article/who-is-satoshi-nakamoto'><span style='color:blue;'>Satoshi Nakamoto</span></a>. Foi lan&ccedil;ado um pouco depois, em janeiro de 2009.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>O Bitcoin &eacute; uma moeda digital ponto a ponto, o que significa que toda <a href='https://coinmarketcap.com/alexandria/article/how-long-does-a-bitcoin-transaction-take'><span style='color:blue;'>transa&ccedil;&atilde;o</span></a> ocorre diretamente entre as partes iguais e independentes, sem a necessidade de nenhum intermedi&aacute;rio para permitir ou facilitar. O Bitcoin foi criado, de acordo com as pr&oacute;prias palavras do Nakamoto, para permitir que &ldquo;pagamentos online sejam enviados diretamente de uma parte para a outra, sem passar por uma institui&ccedil;&atilde;o financeira&rdquo;.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>Alguns conceitos para um tipo semelhante de moeda eletr&ocirc;nica descentralizada precedem o BTC, mas o Bitcoin possui o diferencial de ser a primeira criptomoeda a realmente entrar em uso.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><strong><span style='font-size:21px;font-family:'Arial',sans-serif;'>Quem S&atilde;o os Fundadores do Bitcoin?</span></strong></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>O criador inicial do Bitcoin &eacute; conhecido por seu pseud&ocirc;nimo, Satoshi Nakamoto. At&eacute; o momento, em 2020, sua identidade verdadeira como pessoa &mdash; ou organiza&ccedil;&atilde;o &mdash; permanece desconhecida.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>Em 31 de outubro de 2008, Nakamoto publicou o whitepaper do Bitcoin, que descreveu em detalhes como uma moeda digital ponto a ponto poderia ser implementada. Foi proposta a utilizada de um livro raz&atilde;o descentralizado embalado em lotes para as transa&ccedil;&otilde;es (chamados de &ldquo;blocos&rdquo;) e protegidos por um algoritmo criptografado &mdash; o sistema inteiro posteriormente foi chamado de &ldquo;<a href='https://coinmarketcap.com/alexandria/glossary/blockchain'><span style='color:blue;'>blockchain</span></a>.&rdquo;</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>Em 2 de janeiro de 2009, apenas dois meses depois, Nakamoto minerou o primeiro bloco na rede do Bitcoin, conhecido como o <a href='https://coinmarketcap.com/alexandria/glossary/genesis-block'><span style='color:blue;'>bloco g&ecirc;nesis</span></a>, lan&ccedil;ando ao mundo a primeira criptomoeda.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>No entanto, mesmo sendo Nakamoto o inventor real do Bitcoin, assim como o autor da sua primeira implementa&ccedil;&atilde;o, no passar dos anos um grande n&uacute;mero de pessoas contribuiu para melhorar o software da criptomoeda, arrumando vulnerabilidades e adicionando novas ferramentas.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>O reposit&oacute;rio do c&oacute;digo fonte do Bitcoin no GitHub lista mais de 750 contribui&ccedil;&otilde;es, com algumas das mais importantes sendo realizadas por Wladimir J. van der Laan, Marco Falke, Pieter Wuille, Gavin Andresen, Jonas Schnelli e outros.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><strong><span style='font-size:21px;font-family:'Arial',sans-serif;'>O Que Torna o Bitcoin &Uacute;nico?</span></strong></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>A vantagem mais original do Bitcoin &eacute; o fato de ser a primeira criptomoeda a aparecer no mercado.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>Criou-se toda uma comunidade global e gerou toda uma nova ind&uacute;stria de milh&otilde;es de entusiastas que criam, investem e transacionam Bitcoin e outras criptomoedas no seu dia a dia. O nascimento da primeira criptomoeda construiu uma base conceitual e t&eacute;cnica que inspirou o desenvolvimento de milhares de outros projetos concorrentes.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'><a href='https://coinmarketcap.com/'><span style='color:blue;'>Todo o mercado de criptomoedas</span></a> &mdash; valendo atualmente mais de U$300 bilh&otilde;es &mdash; &eacute; baseado na ideia apresentada pelo Bitcoin: dinheiro que pode ser enviado e recebido por qualquer um, em qualquer lugar no mundo, sem depender de intermedi&aacute;rios de confian&ccedil;a, como bancos e empresas de servi&ccedil;os financeiros.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>Gra&ccedil;as a sua natureza pioneira, o BTC permanece no topo deste mercado en&eacute;rgico, ap&oacute;s mais de uma d&eacute;cada de exist&ecirc;ncia. Mesmo ap&oacute;s o Bitcoin perder sua domin&acirc;ncia indisput&aacute;vel, ele segue sendo a maior <a href='https://coinmarketcap.com/alexandria/article/what-are-cryptocurrencies'><span style='color:blue;'>criptomoeda</span></a>, com uma capitaliza&ccedil;&atilde;o de mercado que pode variar entre U$100 e U$200 bilh&otilde;es em 2020. Isso se deve em grande parte &agrave;s diversas plataformas que fornecem casos de uso para o BTC, como: <a href='https://coinmarketcap.com/alexandria/article/how-to-use-a-bitcoin-wallet'><span style='color:blue;'>carteiras</span></a>, corretoras, servi&ccedil;os de pagamento, jogos online e muito mais.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><strong><span style='font-size:21px;font-family:'Arial',sans-serif;'>Quantos Bitcoin H&aacute; em Circula&ccedil;&atilde;o?</span></strong></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>O fornecimento total do Bitcoin &eacute; limitado por seu software e nunca ir&aacute; ultrapassar 21.000.000 de moedas. Novas moedas s&atilde;o criadas durante o processo conhecido como <a href='https://coinmarketcap.com/alexandria/article/how-long-does-it-take-to-mine-one-bitcoin'><span style='color:blue;'>&ldquo;minera&ccedil;&atilde;o&rdquo;</span></a>: conforme transa&ccedil;&otilde;es s&atilde;o realizadas dentro da rede, elas s&atilde;o escolhidas pelos mineradores e registradas nos blocos, sendo ent&atilde;o protegidos por um complexo c&aacute;lculo criptografado.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>Como recompensa por gastarem seu recurso computacional, os mineradores recebem recompensas para cada bloco que eles adicionam no blockchain. No momento do lan&ccedil;amento do Bitcoin, a recompensa era de 50 bitcoins por bloco: este n&uacute;mero sofre um <a href='https://coinmarketcap.com/halving/bitcoin/'><span style='color:blue;'>halving</span></a> a cada 210.000 novos blocos minerados &mdash; o que em m&eacute;dia demora na rede quatro anos. Considerando 2020, a recompensa por bloco j&aacute; passou por tr&ecirc;s halving, sendo o valor atual de 6,25 bitcoins.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>O Bitcoin n&atilde;o passou por minera&ccedil;&atilde;o pr&eacute;via, o que significa que nenhuma moeda foi minerada e/ou distribu&iacute;da entre os fundadores antes de se tornar dispon&iacute;vel ao p&uacute;blico. No entanto, durante os primeiros anos de exist&ecirc;ncia do BTC, a competi&ccedil;&atilde;o entre os mineradores era relativamente baixa, permitindo que os participantes iniciais da rede acumulassem uma quantidade relevante de moedas atrav&eacute;s da pr&oacute;pria minera&ccedil;&atilde;o: acredita-se que o pr&oacute;prio Satoshi Nakamoto possua sozinho mais de um milh&atilde;o de Bitcoins.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><strong><span style='font-size:21px;font-family:'Arial',sans-serif;'>Como a Rede do Bitcoin &Eacute; Assegurada?</span></strong></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>O Bitcoin &eacute; protegido pelo <a href='https://coinmarketcap.com/alexandria/glossary/sha-256'><span style='color:blue;'>algoritmo SHA-256</span></a>, que pertence &agrave; fam&iacute;lia SHA-2 de algoritmos hashing, que tamb&eacute;m &eacute; usado pelo seu fork, o Bitcoin Cash (<a href='https://coinmarketcap.com/pt-br/currencies/bitcoin-cash/'><span style='color:blue;'>BCH</span></a>), assim como diversas outras criptomoedas.</span></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><strong><span style='font-size:21px;font-family:'Arial',sans-serif;'>Onde Voc&ecirc; Pode Comprar <a href='https://coinmarketcap.com/pt-br/currencies/bitcoin/%5bBTC%5d'><span style='color:blue;'>Bitcoin</span></a>?</span></strong></p><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'>O Bitcoin &eacute; considerado, de muitas maneiras, praticamente sin&ocirc;nimo de criptomoedas, o que significa que voc&ecirc; pode comprar e vender em praticamente todas as corretoras de criptomoedas &mdash; tanto com dinheiro fiat quanto com outras criptomoedas. Alguns dos principais mercados para transa&ccedil;&otilde;es de BTC est&atilde;o dispon&iacute;veis na:</span></p><ul style='margin-bottom:0cm;' type='disc'> <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'><a href='https://coinmarketcap.com/pt-br/exchanges/binance/'><span style='color:blue;'>Binance</span></a></span></li> <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'><a href='https://coinmarketcap.com/pt-br/exchanges/coinbase-pro/'><span style='color:blue;'>Coinbase Pro</span></a></span></li> <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'><a href='https://coinmarketcap.com/pt-br/exchanges/okex/'><span style='color:blue;'>OKEx</span></a></span></li> <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'><a href='https://coinmarketcap.com/pt-br/exchanges/kraken/'><span style='color:blue;'>Kraken</span></a></span></li> <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'><a href='https://coinmarketcap.com/pt-br/exchanges/huobi-global/'><span style='color:blue;'>Huobi Global</span></a></span></li> <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-size:21px;font-family:'Arial',sans-serif;'><a href='https://coinmarketcap.com/pt-br/exchanges/bitfinex/'><span style='color:blue;'>Bitfinex</span></a></span></li></ul><p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:'Calibri',sans-serif;text-align:justify;'><span style='font-family:'Arial',sans-serif;'>&nbsp;</span></p>"
+      }
+    },
+    {
+      "id": "ethereum",
+      "symbol": "eth",
+      "description": {
+        "usd": "",
+        "brl": "Bitcoin is the first successful internet money based on peer-to-peer technology; whereby no central bank or authority is involved in the transaction and production of the Bitcoin currency. It was created by an anonymous individual/group under the name, Satoshi Nakamoto. The source code is available publicly as an open source project, anybody can look at it and be part of the developmental process.\r\n\r\nBitcoin is changing the way we see money as we speak. The idea was to produce a means of exchange, independent of any central authority, that could be transferred electronically in a secure, verifiable and immutable way. It is a decentralized peer-to-peer internet currency making mobile payment easy, very low transaction fees, protects your identity, and it works anywhere all the time with no central authority and banks.\r\n\r\nBitcoin is designed to have only 21 million BTC ever created, thus making it a deflationary currency. Bitcoin uses the <a href=\"https://www.coingecko.com/en?hashing_algorithm=SHA-256\">SHA-256</a> hashing algorithm with an average transaction confirmation time of 10 minutes. Miners today are mining Bitcoin using ASIC chip dedicated to only mining Bitcoin, and the hash rate has shot up to peta hashes.\r\n\r\nBeing the first successful online cryptography currency, Bitcoin has inspired other alternative currencies such as <a href=\"https://www.coingecko.com/en/coins/litecoin\">Litecoin</a>, <a href=\"https://www.coingecko.com/en/coins/peercoin\">Peercoin</a>, <a href=\"https://www.coingecko.com/en/coins/primecoin\">Primecoin</a>, and so on.\r\n\r\nThe cryptocurrency then took off with the innovation of the turing-complete smart contract by <a href=\"https://www.coingecko.com/en/coins/ethereum\">Ethereum</a> which led to the development of other amazing projects such as <a href=\"https://www.coingecko.com/en/coins/eos\">EOS</a>, <a href=\"https://www.coingecko.com/en/coins/tron\">Tron</a>, and even crypto-collectibles such as <a href=\"https://www.coingecko.com/buzz/ethereum-still-king-dapps-cryptokitties-need-1-billion-on-eos\">CryptoKitties</a>."
+      }
+    },
+    {
+      "id": "tether",
+      "symbol": "usdt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "binancecoin",
+      "symbol": "bnb",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "cardano",
+      "symbol": "ada",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "dogecoin",
+      "symbol": "doge",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ripple",
+      "symbol": "xrp",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "usd-coin",
+      "symbol": "usdc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "polkadot",
+      "symbol": "dot",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "uniswap",
+      "symbol": "uni",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "internet-computer",
+      "symbol": "icp",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "bitcoin-cash",
+      "symbol": "bch",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "litecoin",
+      "symbol": "ltc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "chainlink",
+      "symbol": "link",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "solana",
+      "symbol": "sol",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "binance-usd",
+      "symbol": "busd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "matic-network",
+      "symbol": "matic",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "theta-token",
+      "symbol": "theta",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "stellar",
+      "symbol": "xlm",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "vechain",
+      "symbol": "vet",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ethereum-classic",
+      "symbol": "etc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "wrapped-bitcoin",
+      "symbol": "wbtc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "filecoin",
+      "symbol": "fil",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "tron",
+      "symbol": "trx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "eos",
+      "symbol": "eos",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "dai",
+      "symbol": "dai",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "monero",
+      "symbol": "xmr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "aave",
+      "symbol": "aave",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "okb",
+      "symbol": "okb",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "shiba-inu",
+      "symbol": "shib",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "compound-usd-coin",
+      "symbol": "cusdc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "kusama",
+      "symbol": "ksm",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "cdai",
+      "symbol": "cdai",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "neo",
+      "symbol": "neo",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "compound-ether",
+      "symbol": "ceth",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "celsius-degree-token",
+      "symbol": "cel",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "cosmos",
+      "symbol": "atom",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "iota",
+      "symbol": "miota",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "bitcoin-cash-sv",
+      "symbol": "bsv",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "pancakeswap-token",
+      "symbol": "cake",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "theta-fuel",
+      "symbol": "tfuel",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "maker",
+      "symbol": "mkr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "crypto-com-chain",
+      "symbol": "cro",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "algorand",
+      "symbol": "algo",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "tezos",
+      "symbol": "xtz",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ftx-token",
+      "symbol": "ftt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "leo-token",
+      "symbol": "leo",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "avalanche-2",
+      "symbol": "AVAX",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "klay-token",
+      "symbol": "klay",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "bittorrent-2",
+      "symbol": "btt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "huobi-token",
+      "symbol": "ht",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "terra-luna",
+      "symbol": "luna",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "thorchain",
+      "symbol": "rune",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "huobi-token",
+      "symbol": "ht",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "safemoon",
+      "symbol": "safemoon",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "terrausd",
+      "symbol": "ust",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "amp-token",
+      "symbol": "amp",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "hedera-hashgraph",
+      "symbol": "hbar",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "compound-governance-token",
+      "symbol": "comp",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "sushi",
+      "symbol": "sushi",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "dash",
+      "symbol": "dash",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "decred",
+      "symbol": "dcr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "havven",
+      "symbol": "snx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "telcoin",
+      "symbol": "tel",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "elrond-erd-2",
+      "symbol": "egld",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "true-usd",
+      "symbol": "tusd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "nem",
+      "symbol": "xem",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "zcash",
+      "symbol": "zec",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "yearn-finance",
+      "symbol": "yfi",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "holotoken",
+      "symbol": "hot",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "waves",
+      "symbol": "waves",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "zilliqa",
+      "symbol": "zil",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "huobi-btc",
+      "symbol": "hbtc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "chiliz",
+      "symbol": "chz",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "enjincoin",
+      "symbol": "enj",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "staked-ether",
+      "symbol": "steth",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "near",
+      "symbol": "near",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "paxos-standard",
+      "symbol": "pax",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "nexo",
+      "symbol": "nexo",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "helium",
+      "symbol": "hnt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "fei-protocol",
+      "symbol": "fei",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "basic-attention-token",
+      "symbol": "bat",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "qtum",
+      "symbol": "qtum",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "blockstack",
+      "symbol": "stx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "bitcoin-gold",
+      "symbol": "btg",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "huobi-token",
+      "symbol": "ht",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "decentraland",
+      "symbol": "mana",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "nano",
+      "symbol": "nano",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "zencash",
+      "symbol": "zen",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "harmony",
+      "symbol": "one",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "huobi-token",
+      "symbol": "ht",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "huobi-token",
+      "symbol": "ht",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "husd",
+      "symbol": "husd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "the-graph",
+      "symbol": "grt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "digibyte",
+      "symbol": "dgb",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "bancor",
+      "symbol": "bnt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ontology",
+      "symbol": "ont",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "pirate-chain",
+      "symbol": "arrr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "arweave",
+      "symbol": "ar",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "liquity-usd",
+      "symbol": "lusd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "siacoin",
+      "symbol": "sc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "uma",
+      "symbol": "uma",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "0x",
+      "symbol": "zrx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "bakerytoken",
+      "symbol": "bake",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "xsushi",
+      "symbol": "xsushi",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "fantom",
+      "symbol": "ftm",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "omisego",
+      "symbol": "omg",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "curve-dao-token",
+      "symbol": "crv",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "gatechain-token",
+      "symbol": "gt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "nxm",
+      "symbol": "nxm",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "swissborg",
+      "symbol": "chsb",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "wazirx",
+      "symbol": "wrx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ankr",
+      "symbol": "ankr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "iostoken",
+      "symbol": "iost",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "kucoin-shares",
+      "symbol": "kcs",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "compound-usdt",
+      "symbol": "cusdt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ravencoin",
+      "symbol": "rvn",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "livepeer",
+      "symbol": "lpt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "xdce-crowd-sale",
+      "symbol": "xdc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "icon",
+      "symbol": "icx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "flow",
+      "symbol": "flow",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "1inch",
+      "symbol": "1inch",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ethos",
+      "symbol": "vgx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "quant-network",
+      "symbol": "qnt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "hbtc-token",
+      "symbol": "hbc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "nervos-network",
+      "symbol": "ckb",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "seth",
+      "symbol": "seth",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "mina-protocol",
+      "symbol": "mina",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "singularitynet",
+      "symbol": "agi",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "lisk",
+      "symbol": "lsk",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "chia",
+      "symbol": "xch",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "reserve-rights-token",
+      "symbol": "rsr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "titanswap",
+      "symbol": "titan",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "bitcoin-diamond",
+      "symbol": "bcd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "oxygen",
+      "symbol": "oxy",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "republic-protocol",
+      "symbol": "ren",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ecomi",
+      "symbol": "omi",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "loopring",
+      "symbol": "lrc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "bitcoin-cash-abc-2",
+      "symbol": "bcha",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "pundi-x",
+      "symbol": "npxs",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "neutrino",
+      "symbol": "usdn",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "pundi-x-2",
+      "symbol": "pundix",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "wootrade-network",
+      "symbol": "woo",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "wink",
+      "symbol": "win",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "renbtc",
+      "symbol": "renbtc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "celo",
+      "symbol": "celo",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "feg-token",
+      "symbol": "feg",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "tribe-2",
+      "symbol": "tribe",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ergo",
+      "symbol": "erg",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "asd",
+      "symbol": "asd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "skale",
+      "symbol": "skl",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "status",
+      "symbol": "SNT",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "mirror-protocol",
+      "symbol": "mir",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "nusd",
+      "symbol": "susd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "dent",
+      "symbol": "dent",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "vethor-token",
+      "symbol": "vtho",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "maidsafecoin",
+      "symbol": "maid",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "conflux-token",
+      "symbol": "cfx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "iexec-rlc",
+      "symbol": "rlc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "energy-web-token",
+      "symbol": "ewt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "compound-uniswap",
+      "symbol": "cuni",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "givingtoservices",
+      "symbol": "svcs",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "kava",
+      "symbol": "kava",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "golem",
+      "symbol": "glm",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "pax-gold",
+      "symbol": "paxg",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "balancer",
+      "symbol": "bal",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "reef-finance",
+      "symbol": "reef",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "usdp",
+      "symbol": "usdp",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "alchemix-usd",
+      "symbol": "alusd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "gnosis",
+      "symbol": "gno",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "mdex",
+      "symbol": "mdx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "tokamak-network",
+      "symbol": "ton",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "tenset",
+      "symbol": "10set",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "numeraire",
+      "symbol": "nmr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "venus",
+      "symbol": "xvs",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ocean-protocol",
+      "symbol": "ocean",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "band-protocol",
+      "symbol": "band",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "alchemix",
+      "symbol": "alcx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "stakehound-staked-ether",
+      "symbol": "steth",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "raydium",
+      "symbol": "ray",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "injective-protocol",
+      "symbol": "inj",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "wax",
+      "symbol": "waxp",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ton-crystal",
+      "symbol": "ton",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "iotex",
+      "symbol": "iotx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "uquid-coin",
+      "symbol": "uqc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "cartesi",
+      "symbol": "ctsi",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "axie-infinity",
+      "symbol": "axs",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "klever",
+      "symbol": "klv",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "funfair",
+      "symbol": "fun",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "persistence",
+      "symbol": "xprt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "serum",
+      "symbol": "srm",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "audius",
+      "symbol": "audio",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "everipedia",
+      "symbol": "iq",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "btc-standard-hashrate-token",
+      "symbol": "btcst",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ultra",
+      "symbol": "uos",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "rocket-pool",
+      "symbol": "rpl",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "nkn",
+      "symbol": "nkn",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "fetch-ai",
+      "symbol": "fet",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "melon",
+      "symbol": "mln",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "anchor-protocol",
+      "symbol": "anc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ampleforth",
+      "symbol": "ampl",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "akash-network",
+      "symbol": "akt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "celer-network",
+      "symbol": "celr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "polymath-network",
+      "symbol": "poly",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ardor",
+      "symbol": "ardr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "orchid-protocol",
+      "symbol": "oxt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "alpha-finance",
+      "symbol": "alpha",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "automata",
+      "symbol": "ata",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "prometeus",
+      "symbol": "prometeus",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "the-sandbox",
+      "symbol": "sand",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "math",
+      "symbol": "math",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "storm",
+      "symbol": "stmx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "civic",
+      "symbol": "cvc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "steem",
+      "symbol": "steem",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ethlend",
+      "symbol": "lend",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "kyber-network",
+      "symbol": "kncl",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "dodo",
+      "symbol": "dodo",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "hxro",
+      "symbol": "hxro",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "origin-protocol",
+      "symbol": "ogn",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ark",
+      "symbol": "ark",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "komodo",
+      "symbol": "kmd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "zipmex-token",
+      "symbol": "zmt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "medibloc",
+      "symbol": "med",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "alien-worlds",
+      "symbol": "tlm",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "orbs",
+      "symbol": "orbs",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "perpetual-protocol",
+      "symbol": "perp",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "zkswap",
+      "symbol": "zks",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "nucypher",
+      "symbol": "nu",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "metal",
+      "symbol": "mtl",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "tether-gold",
+      "symbol": "xaut",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "shabu-shabu",
+      "symbol": "kobe",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "orion-protocol",
+      "symbol": "orn",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "aragon",
+      "symbol": "ant",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "swipe",
+      "symbol": "sxp",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "haven",
+      "symbol": "xhv",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "metadium",
+      "symbol": "meta",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "casper-network",
+      "symbol": "cspr",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "monacoin",
+      "symbol": "mona",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "unibright",
+      "symbol": "ubt",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "electroneum",
+      "symbol": "etn",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "pha",
+      "symbol": "pha",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "thorchain-erc20",
+      "symbol": "rune",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "gemini-dollar",
+      "symbol": "gusd",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "wrapped-nxm",
+      "symbol": "wnxm",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "lockchain",
+      "symbol": "loc",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "defipulse-index",
+      "symbol": "dpi",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "tokocrypto",
+      "symbol": "tko",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "ampleforth-governance-token",
+      "symbol": "forth",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "stratis",
+      "symbol": "strax",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "velas",
+      "symbol": "vlx",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "hydra",
+      "symbol": "hydra",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "hive",
+      "symbol": "hive",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    },
+    {
+      "id": "storj",
+      "symbol": "storj",
+      "description": {
+        "usd": "",
+        "brl": ""
+      }
+    }
+  ]
+}
