@@ -104,7 +104,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
   ];
 
   const handleChangeSelectMoedaCrypto = (e) => {
-    console.log("FUNCIONOU", e.symbol);
+    //console.log("FUNCIONOU", e.symbol);
     window.location.replace(`../${selectMoedaFiat}/${e.symbol.toUpperCase()}`);
   };
 
@@ -412,6 +412,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
       value: moeda.name,
       label: (
         <Link
+          passHref={true}
           href={`${selectMoedaFiat}/[id]`}
           as={`${selectMoedaFiat}/${moeda.symbol.toUpperCase()}`}
         >
@@ -545,7 +546,6 @@ export default function Home({ propriedades, cotacoesFiat }) {
               placeholder={options[1].labelSemLink}
               options={options}
               styles={customStyles}
-              onChange={handleChangeSelectMoedaCrypto}
             />
           </Grid.Column>
 
@@ -644,7 +644,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
           simbolo={`${propriedades[1].symbol.toUpperCase()}${selectMoedaFiat}`}
         />
 
-        <>{Parser(content.pages[0].description.brl)}</>
+        <>{Parser(content.pages[3].description.brl)}</>
       </div>
       <div style={{ height: "60px" }}></div>
     </div>
