@@ -22,6 +22,7 @@ import {
   Dropdown,
   Icon,
   Header,
+  Loader,
 } from "semantic-ui-react";
 
 import "semantic-ui-css/semantic.min.css";
@@ -29,6 +30,7 @@ import "semantic-ui-css/semantic.min.css";
 
 import content from "../pages/api/frontaid.content.json";
 import Parser from "html-react-parser";
+import useWindowDimensions from "../components/TamanhoDaTela";
 
 export default function Home({ propriedades, cotacoesFiat }) {
   const valorUSD = cotacoesFiat.USDBRL.ask;
@@ -37,6 +39,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
   const [moedaFiat, setMoedaFiat] = useState(propriedades[1].current_price);
+  const [loading, setLoading] = useState(false);
+  const { width, height } = useWindowDimensions();
 
   useEffect(() => {
     setMoedaFiat(propriedades[1].current_price);
@@ -44,7 +48,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
   function handleScroll() {
     window.scroll({
-      top: 1100,
+      top: 950,
       left: 0,
       behavior: "smooth",
     });
@@ -105,7 +109,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
 
   const handleChangeSelectMoedaCrypto = (e) => {
     //console.log("FUNCIONOU", e.symbol);
-    window.location.replace(`../${selectMoedaFiat}/${e.symbol.toUpperCase()}`);
+    setLoading(true);
+    window.location.assign(`../${selectMoedaFiat}/${e.symbol.toUpperCase()}`);
   };
 
   const handleChangeSelectMoedaFiat = (e) => {
@@ -546,6 +551,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
               placeholder={options[1].labelSemLink}
               options={options}
               styles={customStyles}
+              onChange={handleChangeSelectMoedaCrypto}
             />
           </Grid.Column>
 
@@ -607,6 +613,16 @@ export default function Home({ propriedades, cotacoesFiat }) {
             <FaExchangeAlt />
           </div>
         </Divider>
+        {width < 768 ? null : (
+          <Loader
+            active={loading}
+            inline
+            style={{
+              marginInlineStart: "39%",
+              marginTop: "-130px",
+            }}
+          />
+        )}
       </Segment>
 
       <div
@@ -643,8 +659,9 @@ export default function Home({ propriedades, cotacoesFiat }) {
         <Grafico
           simbolo={`${propriedades[1].symbol.toUpperCase()}${selectMoedaFiat}`}
         />
-
-        <>{Parser(content.pages[3].description.brl)}</>
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        {Parser(content.pages[1].description.brl)}
       </div>
       <div style={{ height: "60px" }}></div>
     </div>
