@@ -498,8 +498,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
             marginBottom: "40px",
             minWidth: "100px",
           }}
-          height="8%"
-          width="8%"
+          height="9%"
+          width="9%"
         />
       </div>
 
