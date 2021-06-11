@@ -1006,11 +1006,12 @@ export const getStaticPaths = async () => {
     arrayDados = arrayDados.concat(data);
   }
 
-  /* let paths1 = arrayDados.map((moeda) => {
-    return { params: { id: `../USD/${moeda.symbol}`.toUpperCase() } };
-  }); */
+  let paths1 = arrayDados.map((moeda) => {
+    return { params: { id: `${moeda.symbol}`.toUpperCase() } };
+  });
 
-  //const paths = { params: { id: `../USD/ETH` } };
+  const paths = paths1;
+  //paths: [{ params: { id: "BTC" } }, { params: { id: "ETH" } }],
 
   return {
     paths: [{ params: { id: "BTC" } }, { params: { id: "ETH" } }],
