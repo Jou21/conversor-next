@@ -751,7 +751,7 @@ export default function Moeda({
         <Link
           passHref={true}
           href={`../${selectMoedaFiat}/[id]`}
-          as={`../${selectMoedaFiat}/${moeda.symbol.toUpperCase()}`}
+          as={`../${selectMoedaFiat}/${moeda.symbol}`.toUpperCase()}
         >
           <div
             style={{
