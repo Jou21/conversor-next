@@ -1014,7 +1014,7 @@ export const getStaticPaths = async () => {
   //paths: [{ params: { id: "BTC" } }, { params: { id: "ETH" } }],
 
   return {
-    paths: [{ params: { id: "BTC" } }, { params: { id: "ETH" } }],
+    paths,
     fallback: "blocking",
   };
 };
