@@ -1010,10 +1010,10 @@ export const getStaticPaths = async () => {
     return { params: { id: `../EUR/${moeda.symbol}`.toUpperCase() } };
   }); */
 
-  const paths = { params: { id: `../EUR/ETH` } };
+  //const paths = { params: { id: `../EUR/ETH` } };
 
   return {
-    paths,
+    paths: [{ params: { id: "../BRL/BTC" } }, { params: { id: "../BRL/ETH" } }],
     fallback: "blocking",
   };
 };
