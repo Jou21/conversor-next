@@ -49,7 +49,7 @@ export default function Moeda({
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
-    setMoedaFiat(precoDaMoedaCrypto / valorUSD);
+    setMoedaFiat((precoDaMoedaCrypto / valorUSD).toFixed(2));
   }, [precoDaMoedaCrypto]);
 
   function handleScroll() {
