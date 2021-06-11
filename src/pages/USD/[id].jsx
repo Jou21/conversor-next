@@ -1010,7 +1010,7 @@ export const getStaticPaths = async () => {
     return { params: { id: `../USD/${moeda.symbol}`.toUpperCase() } };
   }); */
 
-  const paths = null;
+  const paths = { params: { id: `../USD/ETH` } };
 
   return {
     paths,
