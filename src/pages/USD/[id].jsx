@@ -1013,7 +1013,7 @@ export const getStaticPaths = async () => {
   //const paths = { params: { id: `../USD/ETH` } };
 
   return {
-    paths: [{ params: { id: "../BRL/BTC" } }, { params: { id: "../BRL/ETH" } }],
+    paths: [{ params: { id: "BTC" } }, { params: { id: "ETH" } }],
     fallback: "blocking",
   };
 };
