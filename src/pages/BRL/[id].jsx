@@ -988,6 +988,7 @@ export default function Moeda({
       <div style={{ marginTop: "50px" }}>
         {content.pages.some(function (element, index) {
           if (element.symbol == propriedadesMoedaCryptoAtual.symbol) {
+            texto = [];
             texto.push(Parser(element.description.brl));
             return true;
           }
