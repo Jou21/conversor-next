@@ -60,6 +60,8 @@ export default function Moeda({
     });
   }
 
+  let texto = [];
+
   const options = [];
 
   const options2 = [
@@ -984,7 +986,13 @@ export default function Moeda({
         />
       </div>
       <div style={{ marginTop: "50px" }}>
-        {Parser(content.pages[1].description.brl)}
+        {content.pages.some(function (element, index) {
+          if (element.symbol == propriedadesMoedaCryptoAtual.symbol) {
+            texto.push(Parser(element.description.brl));
+            return true;
+          }
+        })}
+        <div>{texto}</div>
       </div>
       <div style={{ height: "60px" }}></div>
     </div>
