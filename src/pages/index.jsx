@@ -12,6 +12,8 @@ import { FiDollarSign } from "react-icons/fi";
 
 import styles from "../styles.module.scss";
 
+import Head from 'next/head'
+
 import {
   Button,
   Divider,
@@ -460,6 +462,10 @@ export default function Home({ propriedades, cotacoesFiat }) {
   });
 
   return (
+      <Head>
+        <title>Ethereum Hoje</title>
+        <meta name="description" content="Ethereum Hoje. Valor da cotação do Ether comercial e preço das melhores exchanges hoje. Preço do Ether sempre atualizado!" />
+      </Head>
     <div className="container" style={{ maxWidth: "1300px" }}>
       <div
         style={{
