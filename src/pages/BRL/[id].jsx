@@ -802,6 +802,10 @@ export default function Moeda({
           {propriedadesMoedaCryptoAtual.name} Hoje: Cotação, Valor e Preço! -
           Ethereum Hoje
         </title>
+        <link
+          rel={`${propriedadesMoedaCryptoAtual.id} icon`}
+          href={`${propriedadesMoedaCryptoAtual.image}`}
+        />
         <meta
           name="description"
           content={`No ${propriedadesMoedaCryptoAtual.name} Hoje você encontra qual é a cotação atual do ${propriedadesMoedaCryptoAtual.name}, informações relevantes sobre a criptomoeda, seu gráfico além de um excelente conversor de criptomoedas!`}

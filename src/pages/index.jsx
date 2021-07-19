@@ -465,6 +465,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
     <>
       <Head>
         <title>Ethereum Hoje: Cotação, Valor e Preço!</title>
+        <link rel="ethereum icon" href="/favicon.ico" />
         <meta
           name="description"
           content="No Ethereum Hoje você encontra qual é a cotação atual do Ethereum, informações relevantes sobre a criptomoeda, seu gráfico além de um excelente conversor de criptomoedas!"
