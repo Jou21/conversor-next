@@ -12,6 +12,8 @@ import { FiDollarSign } from "react-icons/fi";
 
 import styles from "../../styles.module.scss";
 
+import Head from "next/head";
+
 import {
   Button,
   Divider,
@@ -796,209 +798,221 @@ export default function Moeda({
   });
 
   return (
-    <div className="container" style={{ maxWidth: "1300px" }}>
-      <div
-        style={{
-          textAlign: "center",
-          paddingBottom: "40px",
-          paddingTop: "50px",
-        }}
-      >
+    <>
+      <Head>
+        <title>
+          {propriedadesMoedaCryptoAtual.name} Hoje: Cotação, Valor e Preço! -
+          Ethereum Hoje
+        </title>
+        <meta
+          name="description"
+          content={`No ${propriedadesMoedaCryptoAtual.name} Hoje você encontra qual é a cotação atual do ${propriedadesMoedaCryptoAtual.name}, informações relevantes sobre a criptomoeda, seu gráfico além de um excelente conversor de criptomoedas!`}
+        ></meta>
+      </Head>
+      <div className="container" style={{ maxWidth: "1300px" }}>
         <div
           style={{
             textAlign: "center",
-            color: "lightslategray",
-            fontSize: "25px",
-            fontFamily: "arial",
+            paddingBottom: "40px",
+            paddingTop: "50px",
           }}
         >
-          1 {`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase()} ≅{" "}
-          {selectMoedaFiat == "BRL"
-            ? `${propriedadesMoedaCryptoAtual.current_price.toFixed(
-                2
-              )}`.replace(".", ",")
-            : selectMoedaFiat == "USD"
-            ? `${(
-                propriedadesMoedaCryptoAtual.current_price / valorUSD
-              ).toFixed(2)}`.replace(".", ",")
-            : `${(
-                propriedadesMoedaCryptoAtual.current_price / valorEUR
-              ).toFixed(2)}`.replace(".", ",")}{" "}
-          {selectMoedaFiat}
-        </div>
-      </div>
-
-      <div style={{ textAlign: "center" }}>{imagemMoedaAtual}</div>
-
-      <Segment
-        basic
-        style={{
-          padding: "0px 0px 0px 0px",
-          marginLeft: "0px",
-          marginRight: "0px",
-        }}
-      >
-        <Grid columns={2} relaxed="very" stackable verticalAlign="top">
-          <Grid.Column>
-            <div
-              className="ui input"
-              style={{
-                marginTop: "3px",
-                width: "100%",
-                maxWidth: "100%",
-                borderRadius: 0,
-              }}
-            >
-              <input
-                value={moedaCrypto}
-                className={(styles.ui.icon, styles.input)}
-                onChange={handleChangeValorMoedaCrypto}
-                type="number"
-                placeholder={propriedadesMoedaCryptoAtual.name}
-                style={{
-                  borderRadius: 0,
-                  fontFamily: "sans-serif",
-                  padding: "14px 42px 14px 19px",
-                }}
-              />
-              <i
-                className={styles.tamanho}
-                style={{
-                  marginInlineStart: "-10%",
-                  marginTop: "25px",
-                  color: "gray",
-                }}
-              >
-                <FiDollarSign />
-              </i>
-            </div>
-            <Select
-              className={styles.frente}
-              instanceId="0"
-              placeholder={options[indexOptions].labelSemLink}
-              options={options}
-              styles={customStyles}
-              onChange={handleChangeSelectMoedaCrypto}
-            />
-          </Grid.Column>
-
-          <Grid.Column verticalAlign="bottom">
-            <div
-              className="ui input"
-              style={{
-                marginTop: "3px",
-                width: "100%",
-                maxWidth: "100%",
-                borderRadius: 0,
-              }}
-            >
-              <input
-                value={moedaFiat}
-                className={styles.input}
-                onChange={handleChangeValorMoedaFiat}
-                type="number"
-                placeholder={selectMoedaFiat}
-                style={{
-                  borderRadius: 0,
-                  fontFamily: "sans-serif",
-                  padding: "14px 42px 14px 19px",
-                }}
-              />
-              <i
-                className={styles.tamanho}
-                style={{
-                  marginInlineStart: "-10%",
-                  marginTop: "25px",
-                  color: "gray",
-                }}
-              >
-                <FiDollarSign />
-              </i>
-            </div>
-
-            <Select
-              instanceId="1"
-              placeholder={options2[1].label}
-              options={options2}
-              styles={customStyles}
-              onChange={handleChangeSelectMoedaFiat}
-            />
-          </Grid.Column>
-        </Grid>
-
-        <Divider vertical hidden>
           <div
             style={{
-              marginLeft: "0px",
-              marginTop: "-18px",
-              fontSize: "33px",
-              color: "gray",
-              zIndex: "1",
-              position: "relative",
+              textAlign: "center",
+              color: "lightslategray",
+              fontSize: "25px",
+              fontFamily: "arial",
             }}
           >
-            <FaExchangeAlt />
+            1 {`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase()} ≅{" "}
+            {selectMoedaFiat == "BRL"
+              ? `${propriedadesMoedaCryptoAtual.current_price.toFixed(
+                  2
+                )}`.replace(".", ",")
+              : selectMoedaFiat == "USD"
+              ? `${(
+                  propriedadesMoedaCryptoAtual.current_price / valorUSD
+                ).toFixed(2)}`.replace(".", ",")
+              : `${(
+                  propriedadesMoedaCryptoAtual.current_price / valorEUR
+                ).toFixed(2)}`.replace(".", ",")}{" "}
+            {selectMoedaFiat}
           </div>
-        </Divider>
-        {width < 768 ? null : (
-          <Loader
-            active={loading}
-            inline
-            style={{
-              marginInlineStart: "39%",
-              marginTop: "-130px",
-            }}
-          />
-        )}
-      </Segment>
-
-      <div
-        style={{
-          textAlign: "center",
-          marginTop: "100px",
-        }}
-      >
-        <div>
-          <button
-            onClick={handleScroll}
-            style={{ width: "280px" }}
-            className={styles.button}
-          >
-            <span>
-              <div style={{ textAlign: "center" }}>
-                <img
-                  src="/TradingViewBranco.svg"
-                  style={{
-                    width: "50px",
-                    marginTop: "-7px",
-                  }}
-                  height="8%"
-                  width="8%"
-                />{" "}
-                TradingView
-              </div>
-            </span>
-          </button>
         </div>
-      </div>
 
-      <div style={{ marginTop: "250px" }}>
-        <Grafico
-          simbolo={`${propriedadesMoedaCryptoAtual.symbol.toUpperCase()}${selectMoedaFiat}`}
-        />
+        <div style={{ textAlign: "center" }}>{imagemMoedaAtual}</div>
+
+        <Segment
+          basic
+          style={{
+            padding: "0px 0px 0px 0px",
+            marginLeft: "0px",
+            marginRight: "0px",
+          }}
+        >
+          <Grid columns={2} relaxed="very" stackable verticalAlign="top">
+            <Grid.Column>
+              <div
+                className="ui input"
+                style={{
+                  marginTop: "3px",
+                  width: "100%",
+                  maxWidth: "100%",
+                  borderRadius: 0,
+                }}
+              >
+                <input
+                  value={moedaCrypto}
+                  className={(styles.ui.icon, styles.input)}
+                  onChange={handleChangeValorMoedaCrypto}
+                  type="number"
+                  placeholder={propriedadesMoedaCryptoAtual.name}
+                  style={{
+                    borderRadius: 0,
+                    fontFamily: "sans-serif",
+                    padding: "14px 42px 14px 19px",
+                  }}
+                />
+                <i
+                  className={styles.tamanho}
+                  style={{
+                    marginInlineStart: "-10%",
+                    marginTop: "25px",
+                    color: "gray",
+                  }}
+                >
+                  <FiDollarSign />
+                </i>
+              </div>
+              <Select
+                className={styles.frente}
+                instanceId="0"
+                placeholder={options[indexOptions].labelSemLink}
+                options={options}
+                styles={customStyles}
+                onChange={handleChangeSelectMoedaCrypto}
+              />
+            </Grid.Column>
+
+            <Grid.Column verticalAlign="bottom">
+              <div
+                className="ui input"
+                style={{
+                  marginTop: "3px",
+                  width: "100%",
+                  maxWidth: "100%",
+                  borderRadius: 0,
+                }}
+              >
+                <input
+                  value={moedaFiat}
+                  className={styles.input}
+                  onChange={handleChangeValorMoedaFiat}
+                  type="number"
+                  placeholder={selectMoedaFiat}
+                  style={{
+                    borderRadius: 0,
+                    fontFamily: "sans-serif",
+                    padding: "14px 42px 14px 19px",
+                  }}
+                />
+                <i
+                  className={styles.tamanho}
+                  style={{
+                    marginInlineStart: "-10%",
+                    marginTop: "25px",
+                    color: "gray",
+                  }}
+                >
+                  <FiDollarSign />
+                </i>
+              </div>
+
+              <Select
+                instanceId="1"
+                placeholder={options2[1].label}
+                options={options2}
+                styles={customStyles}
+                onChange={handleChangeSelectMoedaFiat}
+              />
+            </Grid.Column>
+          </Grid>
+
+          <Divider vertical hidden>
+            <div
+              style={{
+                marginLeft: "0px",
+                marginTop: "-18px",
+                fontSize: "33px",
+                color: "gray",
+                zIndex: "1",
+                position: "relative",
+              }}
+            >
+              <FaExchangeAlt />
+            </div>
+          </Divider>
+          {width < 768 ? null : (
+            <Loader
+              active={loading}
+              inline
+              style={{
+                marginInlineStart: "39%",
+                marginTop: "-130px",
+              }}
+            />
+          )}
+        </Segment>
+
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "100px",
+          }}
+        >
+          <div>
+            <button
+              onClick={handleScroll}
+              style={{ width: "280px" }}
+              className={styles.button}
+            >
+              <span>
+                <div style={{ textAlign: "center" }}>
+                  <img
+                    src="/TradingViewBranco.svg"
+                    style={{
+                      width: "50px",
+                      marginTop: "-7px",
+                    }}
+                    height="8%"
+                    width="8%"
+                  />{" "}
+                  TradingView
+                </div>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div style={{ marginTop: "250px" }}>
+          <Grafico
+            simbolo={`${propriedadesMoedaCryptoAtual.symbol.toUpperCase()}${selectMoedaFiat}`}
+          />
+        </div>
+        <div style={{ marginTop: "50px" }}>
+          {content.pages.some(function (element, index) {
+            if (element.symbol == propriedadesMoedaCryptoAtual.symbol) {
+              texto = [];
+              texto.push(Parser(element.description.brl));
+              return true;
+            }
+          })}
+          <div>{texto}</div>
+        </div>
+        <div style={{ height: "60px" }}></div>
       </div>
-      <div style={{ marginTop: "50px" }}>
-        {content.pages.some(function (element, index) {
-          if (element.symbol == propriedadesMoedaCryptoAtual.symbol) {
-            texto = [];
-            texto.push(Parser(element.description.brl));
-            return true;
-          }
-        })}
-        <div>{texto}</div>
-      </div>
-      <div style={{ height: "60px" }}></div>
-    </div>
+    </>
   );
 }
 
