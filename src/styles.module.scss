@@ -96,3 +96,18 @@
 .segmento {
   padding: 1000px;
 }
+
+.myHoveringButton {
+  background: slategray;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.myHoveringButton:hover {
+  background: #1b2229;
+  color: white;
+}
