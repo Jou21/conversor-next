@@ -1,4 +1,5 @@
 import Grafico from "../../components/Grafico";
+import AdBanner from "../components/AdBanner";
 
 import Select from "react-select";
 
