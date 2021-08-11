@@ -638,12 +638,14 @@ export default function Home({ propriedades, cotacoesFiat }) {
           )}
         </Segment>
 
-        <AdBanner />
+        <div style={{ textAlign: "center" }}>
+          <AdBanner />
+        </div>
 
         <div
           style={{
             textAlign: "center",
-            marginTop: "00px",
+            marginTop: "5px",
           }}
         >
           <div>
