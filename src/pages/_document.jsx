@@ -57,7 +57,13 @@ class MyDocument extends Document {
           <script
             async
             src="https://platform.twitter.com/widgets.js"
-            charset="utf-8"
+            charSet="utf-8"
+          ></script>
+
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5863357144334897"
+            crossOrigin="anonymous"
           ></script>
         </body>
       </Html>

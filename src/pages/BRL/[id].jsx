@@ -967,10 +967,12 @@ export default function Moeda({
           )}
         </Segment>
 
+        <AdBanner />
+
         <div
           style={{
             textAlign: "center",
-            marginTop: "100px",
+            marginTop: "00px",
           }}
         >
           <div>

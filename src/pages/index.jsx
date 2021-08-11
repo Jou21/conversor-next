@@ -1,4 +1,5 @@
 import Grafico from "../components/Grafico";
+import AdBanner from "../components/AdBanner";
 
 import Select from "react-select";
 
@@ -637,10 +638,12 @@ export default function Home({ propriedades, cotacoesFiat }) {
           )}
         </Segment>
 
+        <AdBanner />
+
         <div
           style={{
             textAlign: "center",
-            marginTop: "100px",
+            marginTop: "00px",
           }}
         >
           <div>
