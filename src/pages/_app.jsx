@@ -56,17 +56,6 @@ function MyApp({ Component, pageProps }) {
       </div>
 
       <Component {...pageProps} />
-      <div style={{ textAlign: "center" }}>
-        <a
-          className="twitter-timeline"
-          data-lang="pt"
-          data-width="700"
-          data-dnt="true"
-          href="https://twitter.com/EthereumHoje/lists/1424805327833272322?ref_src=twsrc%5Etfw"
-        >
-          A Twitter List by EthereumHoje
-        </a>
-      </div>
     </>
   );
 }
