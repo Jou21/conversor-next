@@ -1011,7 +1011,11 @@ export default function Moeda({
           {content.pages.some(function (element, index) {
             if (element.symbol == propriedadesMoedaCryptoAtual.symbol) {
               texto = [];
-              texto.push(Parser(element.description.brl));
+              if (element.symbol == "eth") {
+                texto.push(Parser(element.description.usd));
+              } else {
+                texto.push(Parser(element.description.brl));
+              }
               return true;
             }
           })}
