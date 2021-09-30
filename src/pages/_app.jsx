@@ -13,10 +13,6 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta
-          name="propeller"
-          content="f0e2f06da3ee8a39ea1f7b07a4991c51"
-        ></meta>
       </Head>
       <div
         style={{
