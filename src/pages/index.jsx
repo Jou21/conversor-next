@@ -638,8 +638,8 @@ export default function Home({ propriedades, cotacoesFiat }) {
           )}
         </Segment>
 
-        <div style={{ textAlign: "center" }}>
-          <AdBanner />
+        <div style={{ textAlign: "center", height: "90px" }}>
+          {/*<AdBanner />*/}
         </div>
 
         <div
