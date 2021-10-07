@@ -68,7 +68,7 @@ class MyDocument extends Document {
 
           <script
             type="text/javascript"
-            data-cfasync="false"
+            async="true"
             dangerouslySetInnerHTML={{
               __html: `
               (function() {
