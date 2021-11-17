@@ -56,6 +56,56 @@ function MyApp({ Component, pageProps }) {
       </div>
 
       <Component {...pageProps} />
+      {/* <div style={{ textAlign: "center" }}>
+        <a
+          className="twitter-timeline"
+          data-lang="pt"
+          data-width="700"
+          data-dnt="true"
+          href="https://twitter.com/EthereumHoje/lists/1424805327833272322?ref_src=twsrc%5Etfw"
+        >
+          A Twitter List by EthereumHoje
+        </a>
+      </div> */}
+
+      <div
+      /* className="container"
+        style={{ maxWidth: "1520px", textAlign: "center" }} */
+      >
+        <div
+        /* className={styles.row}
+          style={{ maxWidth: "1300px", textAlign: "center" }} */
+        >
+          <div
+            /* className={styles.column1} */ style={{ backgroundColor: "#fff" }}
+          >
+            <div style={{ textAlign: "center" }}>
+              <a
+                className="twitter-timeline"
+                data-lang="pt"
+                data-width="700"
+                data-dnt="true"
+                href="https://twitter.com/EthereumHoje/lists/1424805327833272322?ref_src=twsrc%5Etfw"
+              >
+                A Twitter List by EthereumHoje
+              </a>
+            </div>
+          </div>
+
+          {/* <div className={styles.column2} style={{ backgroundColor: "#fff" }}>
+            <div
+              style={{
+                textAlign: "right",
+                width: "100%",
+                marginLeft: "-20px",
+                marginTop: "23px",
+              }}
+            >
+              <img src="/hotmart5.png" />
+            </div>
+          </div> */}
+        </div>
+      </div>
     </>
   );
 }

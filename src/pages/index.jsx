@@ -677,9 +677,9 @@ export default function Home({ propriedades, cotacoesFiat }) {
             simbolo={`${propriedades[1].symbol.toUpperCase()}${selectMoedaFiat}`}
           />
         </div>
-        <div style={{ marginTop: "50px" }}>
+        {/* <div style={{ marginTop: "50px" }}>
           {Parser(content.pages[1].description.brl)}
-        </div>
+        </div> */}
         <div style={{ height: "60px" }}></div>
       </div>
     </>

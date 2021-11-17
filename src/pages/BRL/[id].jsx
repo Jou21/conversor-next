@@ -1007,7 +1007,7 @@ export default function Moeda({
             simbolo={`${propriedadesMoedaCryptoAtual.symbol.toUpperCase()}${selectMoedaFiat}`}
           />
         </div>
-        <div style={{ marginTop: "50px" }}>
+        {/* <div style={{ marginTop: "50px" }}>
           {content.pages.some(function (element, index) {
             if (element.symbol == propriedadesMoedaCryptoAtual.symbol) {
               texto = [];
@@ -1020,7 +1020,7 @@ export default function Moeda({
             }
           })}
           <div>{texto}</div>
-        </div>
+        </div> */}
         <div style={{ height: "60px" }}></div>
       </div>
     </>

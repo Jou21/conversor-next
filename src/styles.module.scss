@@ -111,3 +111,35 @@
   background: #1b2229;
   color: white;
 }
+
+/* Create two equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 70%;
+  padding: 10px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column2 {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fixo {
+  /* deixando o elemento na posição desejada */
+  margin-top: 0px; /* altura que está do topo */
+  top: 0px; /* altura que vai parar antes do topo */
+  /* apenas para aparência */
+  background-color: gold;
+  border: 1px solid red;
+  height: 30px;
+  position: sticky;
+}
