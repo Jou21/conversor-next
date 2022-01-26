@@ -686,7 +686,7 @@ export default function Home({ propriedades, cotacoesFiat }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   let arrayDadosBRL = [];
   /* const URL = process.env.URL;
 
