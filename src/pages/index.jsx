@@ -718,6 +718,5 @@ export const getStaticProps = async () => {
       propriedades: arrayDadosBRL,
       cotacoesFiat: cotacoesFiat,
     },
-    revalidate: 1,
   };
 };
