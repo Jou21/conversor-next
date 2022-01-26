@@ -1103,5 +1103,6 @@ export const getStaticProps = async (context) => {
       propriedadesMoedaCryptoAtual,
       indexOptions,
     },
+    revalidate: 1,
   };
 };
