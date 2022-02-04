@@ -42,12 +42,12 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
-  const [moedaFiat, setMoedaFiat] = useState(preco);
+  const [moedaFiat, setMoedaFiat] = useState(preco.toFixed(2));
   const [loading, setLoading] = useState(false);
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
-    setMoedaFiat(preco);
+    setMoedaFiat(preco.toFixed(2));
   }, [propriedades]);
 
   function handleScroll() {
