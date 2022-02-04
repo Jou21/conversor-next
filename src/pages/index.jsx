@@ -35,18 +35,19 @@ import content from "../pages/api/frontaid.content.json";
 import Parser from "html-react-parser";
 import useWindowDimensions from "../components/TamanhoDaTela";
 
-export default function Home({ propriedades, cotacoesFiat }) {
+export default function Home({ propriedades, cotacoesFiat, precoETH }) {
   const valorUSD = cotacoesFiat.USDBRL.ask;
   const valorEUR = cotacoesFiat.EURBRL.ask;
+  const preco = parseFloat(precoETH);
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
-  const [moedaFiat, setMoedaFiat] = useState(propriedades[1].current_price);
+  const [moedaFiat, setMoedaFiat] = useState(preco);
   const [loading, setLoading] = useState(false);
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
-    setMoedaFiat(propriedades[1].current_price);
+    setMoedaFiat(preco);
   }, [propriedades]);
 
   function handleScroll() {
@@ -120,13 +121,13 @@ export default function Home({ propriedades, cotacoesFiat }) {
     setSelectMoedaFiat(e.value.toUpperCase());
 
     if (e.value.toUpperCase() === "USD") {
-      const num = (moedaCrypto * propriedades[1].current_price) / valorUSD;
+      const num = (moedaCrypto * preco) / valorUSD;
       setMoedaFiat(num.toFixed(2));
     } else if (e.value.toUpperCase() === "EUR") {
-      const num = (moedaCrypto * propriedades[1].current_price) / valorEUR;
+      const num = (moedaCrypto * preco) / valorEUR;
       setMoedaFiat(num.toFixed(2));
     } else {
-      const num = moedaCrypto * propriedades[1].current_price;
+      const num = moedaCrypto * preco;
       setMoedaFiat(num.toFixed(2));
     }
   };
@@ -135,13 +136,13 @@ export default function Home({ propriedades, cotacoesFiat }) {
     setMoedaCrypto(e.target.value);
 
     if (selectMoedaFiat === "USD") {
-      const num = (propriedades[1].current_price * e.target.value) / valorUSD;
+      const num = (preco * e.target.value) / valorUSD;
       setMoedaFiat(num.toFixed(2));
     } else if (selectMoedaFiat === "EUR") {
-      const num = (propriedades[1].current_price * e.target.value) / valorEUR;
+      const num = (preco * e.target.value) / valorEUR;
       setMoedaFiat(num.toFixed(2));
     } else {
-      const num = propriedades[1].current_price * e.target.value;
+      const num = preco * e.target.value;
       setMoedaFiat(num.toFixed(2));
     }
   };
@@ -150,13 +151,13 @@ export default function Home({ propriedades, cotacoesFiat }) {
     setMoedaFiat(e.target.value);
 
     if (selectMoedaFiat === "USD") {
-      const num = e.target.value / propriedades[1].current_price / valorUSD;
+      const num = e.target.value / preco / valorUSD;
       setMoedaCrypto(num);
     } else if (selectMoedaFiat === "EUR") {
-      const num = e.target.value / propriedades[1].current_price / valorEUR;
+      const num = e.target.value / preco / valorEUR;
       setMoedaCrypto(num);
     } else {
-      const num = e.target.value / propriedades[1].current_price;
+      const num = e.target.value / preco;
       setMoedaCrypto(num);
     }
   };
@@ -491,14 +492,10 @@ export default function Home({ propriedades, cotacoesFiat }) {
           >
             1 {`${propriedades[1].symbol}`.toUpperCase()} ≅{" "}
             {selectMoedaFiat == "BRL"
-              ? `${propriedades[1].current_price.toFixed(2)}`.replace(".", ",")
+              ? `${preco.toFixed(2)}`.replace(".", ",")
               : selectMoedaFiat == "USD"
-              ? `${(propriedades[1].current_price / valorUSD).toFixed(
-                  2
-                )}`.replace(".", ",")
-              : `${(propriedades[1].current_price / valorEUR).toFixed(
-                  2
-                )}`.replace(".", ",")}{" "}
+              ? `${(preco / valorUSD).toFixed(2)}`.replace(".", ",")
+              : `${(preco / valorEUR).toFixed(2)}`.replace(".", ",")}{" "}
             {selectMoedaFiat}
           </div>
         </div>
@@ -687,6 +684,18 @@ export default function Home({ propriedades, cotacoesFiat }) {
 }
 
 export const getServerSideProps = async () => {
+  //async function precoETH() {
+  const urlBinance = `https://api.binance.com/api/v1/ticker/price?symbol=ETHBRL`;
+
+  const response = await fetch(urlBinance);
+  const data = await response.json();
+  const precoTemp = parseFloat(data.price);
+  const preco = precoTemp.toFixed(2);
+
+  //console.log(data.price);
+  //return preco;
+  //}
+
   let arrayDadosBRL = [];
   /* const URL = process.env.URL;
 
@@ -717,6 +726,7 @@ export const getServerSideProps = async () => {
     props: {
       propriedades: arrayDadosBRL,
       cotacoesFiat: cotacoesFiat,
+      precoETH: preco,
     },
   };
 };
