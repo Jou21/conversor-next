@@ -691,6 +691,7 @@ export const getServerSideProps = async () => {
   const data = await response.json();
   const precoTemp = parseFloat(data.price);
   const preco = precoTemp.toFixed(2);
+  const preco2 = "eae";
 
   //console.log(data.price);
   //return preco;
