@@ -42,8 +42,8 @@ export default function Moeda({
   propriedadesMoedaCryptoAtual,
   indexOptions,
 }) {
-  const valorUSD = cotacoesFiat.USDBRL.ask;
-  const valorEUR = cotacoesFiat.EURBRL.ask;
+  const valorUSD = cotacoesFiat.USD.ask;
+  const valorEUR = cotacoesFiat.EUR.ask;
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
