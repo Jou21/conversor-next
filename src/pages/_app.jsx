@@ -69,8 +69,8 @@ function MyApp({ Component, pageProps }) {
       </div> */}
 
       <div
-      /* className="container"
-        style={{ maxWidth: "1520px", textAlign: "center" }} */
+        className="container"
+        style={{ maxWidth: "1300px", textAlign: "center" }}
       >
         <div
         /* className={styles.row}
@@ -83,7 +83,7 @@ function MyApp({ Component, pageProps }) {
               <a
                 className="twitter-timeline"
                 data-lang="pt"
-                data-width="700"
+                data-width="1300"
                 data-dnt="true"
                 href="https://twitter.com/EthereumHoje/lists/1424805327833272322?ref_src=twsrc%5Etfw"
               >
