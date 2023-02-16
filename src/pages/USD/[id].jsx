@@ -121,16 +121,16 @@ export default function Moeda({
   const handleChangeSelectMoedaCrypto = (e) => {
     //console.log("FUNCIONOU", e.symbol);
     setLoading(true);
-    window.location.assign(`../${selectMoedaFiat}/${e.symbol.toUpperCase()}`);
+    window.location.assign(`../${selectMoedaFiat}/${e.symbol}`);
   };
 
   const handleChangeSelectMoedaFiat = (e) => {
-    setSelectMoedaFiat(e.value.toUpperCase());
+    setSelectMoedaFiat(e.value);
 
-    if (e.value.toUpperCase() === "USD") {
+    if (e.value === "USD") {
       const num = (moedaCrypto * precoDaMoedaCrypto) / valorUSD;
       setMoedaFiat(num.toFixed(2));
-    } else if (e.value.toUpperCase() === "EUR") {
+    } else if (e.value === "EUR") {
       const num = (moedaCrypto * precoDaMoedaCrypto) / valorEUR;
       setMoedaFiat(num.toFixed(2));
     } else {
@@ -208,7 +208,7 @@ export default function Moeda({
 
   let imagemMoedaAtual;
 
-  if (propriedadesMoedaCryptoAtual.symbol.toUpperCase() == "BTC") {
+  if (propriedadesMoedaCryptoAtual.symbol == "BTC") {
     imagemMoedaAtual = (
       <img
         src="/BTC.svg"
@@ -221,7 +221,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "ETH") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "ETH") {
     imagemMoedaAtual = (
       <img
         src="/ETH.svg"
@@ -234,7 +234,7 @@ export default function Moeda({
         width="9%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "USDT") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "USDT") {
     imagemMoedaAtual = (
       <img
         src="/USDT.svg"
@@ -247,7 +247,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "ADA") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "ADA") {
     imagemMoedaAtual = (
       <img
         src="/ADA.svg"
@@ -260,7 +260,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "BNB") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "BNB") {
     imagemMoedaAtual = (
       <img
         src="/BNB.svg"
@@ -273,7 +273,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "XRP") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "XRP") {
     imagemMoedaAtual = (
       <img
         src="/XRP.svg"
@@ -286,7 +286,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (propriedadesMoedaCryptoAtual.symbol.toUpperCase() == "DOGE") {
+  } else if (propriedadesMoedaCryptoAtual.symbol == "DOGE") {
     imagemMoedaAtual = (
       <img
         src="/DOGE.svg"
@@ -299,7 +299,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "USDC") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "USDC") {
     imagemMoedaAtual = (
       <img
         src="/USDC.svg"
@@ -312,7 +312,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "DOT") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "DOT") {
     imagemMoedaAtual = (
       <img
         src="/DOT.svg"
@@ -325,7 +325,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "UNI") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "UNI") {
     imagemMoedaAtual = (
       <img
         src="/UNI.svg"
@@ -338,7 +338,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "BCH") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "BCH") {
     imagemMoedaAtual = (
       <img
         src="/BCH.svg"
@@ -351,7 +351,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (propriedadesMoedaCryptoAtual.symbol.toUpperCase() == "LINK") {
+  } else if (propriedadesMoedaCryptoAtual.symbol == "LINK") {
     imagemMoedaAtual = (
       <img
         src="/LINK.svg"
@@ -364,7 +364,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "LTC") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "LTC") {
     imagemMoedaAtual = (
       <img
         src="/LTC.svg"
@@ -377,7 +377,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "XLM") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "XLM") {
     imagemMoedaAtual = (
       <img
         src="/XLM.svg"
@@ -390,7 +390,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "ETC") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "ETC") {
     imagemMoedaAtual = (
       <img
         src="/ETC.svg"
@@ -403,7 +403,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "SOL") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "SOL") {
     imagemMoedaAtual = (
       <img
         src="/SOL.svg"
@@ -416,7 +416,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "BUSD") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "BUSD") {
     imagemMoedaAtual = (
       <img
         src="/BUSD.svg"
@@ -429,7 +429,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "VET") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "VET") {
     imagemMoedaAtual = (
       <img
         src="/VET.svg"
@@ -442,7 +442,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "WBTC") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "WBTC") {
     imagemMoedaAtual = (
       <img
         src="/WBTC.svg"
@@ -455,9 +455,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (
-    `${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "THETA"
-  ) {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "THETA") {
     imagemMoedaAtual = (
       <img
         src="/THETA.svg"
@@ -470,7 +468,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "EOS") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "EOS") {
     imagemMoedaAtual = (
       <img
         src="/EOS.svg"
@@ -483,7 +481,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "TRX") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "TRX") {
     imagemMoedaAtual = (
       <img
         src="/TRX.svg"
@@ -496,7 +494,7 @@ export default function Moeda({
         width="17%"
       />
     );
-  } else if (`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase() == "FIL") {
+  } else if (`${propriedadesMoedaCryptoAtual.symbol}` == "FIL") {
     imagemMoedaAtual = (
       <img
         src="/FIL.svg"
@@ -536,7 +534,7 @@ export default function Moeda({
 
   propriedades.map((moeda) => {
     let imagem;
-    if (moeda.symbol.toUpperCase() == "BTC") {
+    if (moeda.symbol == "BTC") {
       imagem = (
         <img
           src="/BTC.svg"
@@ -545,7 +543,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "ETH") {
+    } else if (`${moeda.symbol}` == "ETH") {
       imagem = (
         <img
           src="/ETH.svg"
@@ -554,7 +552,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "USDT") {
+    } else if (`${moeda.symbol}` == "USDT") {
       imagem = (
         <img
           src="/USDT.svg"
@@ -563,7 +561,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "ADA") {
+    } else if (`${moeda.symbol}` == "ADA") {
       imagem = (
         <img
           src="/ADA.svg"
@@ -572,7 +570,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "BNB") {
+    } else if (`${moeda.symbol}` == "BNB") {
       imagem = (
         <img
           src="/BNB.svg"
@@ -581,7 +579,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "XRP") {
+    } else if (`${moeda.symbol}` == "XRP") {
       imagem = (
         <img
           src="/XRP.svg"
@@ -590,7 +588,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (moeda.symbol.toUpperCase() == "DOGE") {
+    } else if (moeda.symbol == "DOGE") {
       imagem = (
         <img
           src="/DOGE.svg"
@@ -599,7 +597,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "USDC") {
+    } else if (`${moeda.symbol}` == "USDC") {
       imagem = (
         <img
           src="/USDC.svg"
@@ -608,7 +606,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "DOT") {
+    } else if (`${moeda.symbol}` == "DOT") {
       imagem = (
         <img
           src="/DOT.svg"
@@ -617,7 +615,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "UNI") {
+    } else if (`${moeda.symbol}` == "UNI") {
       imagem = (
         <img
           src="/UNI.svg"
@@ -626,7 +624,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "BCH") {
+    } else if (`${moeda.symbol}` == "BCH") {
       imagem = (
         <img
           src="/BCH.svg"
@@ -635,7 +633,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (moeda.symbol.toUpperCase() == "LINK") {
+    } else if (moeda.symbol == "LINK") {
       imagem = (
         <img
           src="/LINK.svg"
@@ -644,7 +642,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "LTC") {
+    } else if (`${moeda.symbol}` == "LTC") {
       imagem = (
         <img
           src="/LTC.svg"
@@ -653,7 +651,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "XLM") {
+    } else if (`${moeda.symbol}` == "XLM") {
       imagem = (
         <img
           src="/XLM.svg"
@@ -662,7 +660,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "ETC") {
+    } else if (`${moeda.symbol}` == "ETC") {
       imagem = (
         <img
           src="/ETC.svg"
@@ -671,7 +669,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "SOL") {
+    } else if (`${moeda.symbol}` == "SOL") {
       imagem = (
         <img
           src="/SOL.svg"
@@ -680,7 +678,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "BUSD") {
+    } else if (`${moeda.symbol}` == "BUSD") {
       imagem = (
         <img
           src="/BUSD.svg"
@@ -689,7 +687,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "VET") {
+    } else if (`${moeda.symbol}` == "VET") {
       imagem = (
         <img
           src="/VET.svg"
@@ -698,7 +696,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "WBTC") {
+    } else if (`${moeda.symbol}` == "WBTC") {
       imagem = (
         <img
           src="/WBTC.svg"
@@ -707,7 +705,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "THETA") {
+    } else if (`${moeda.symbol}` == "THETA") {
       imagem = (
         <img
           src="/THETA.svg"
@@ -716,7 +714,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "EOS") {
+    } else if (`${moeda.symbol}` == "EOS") {
       imagem = (
         <img
           src="/EOS.svg"
@@ -725,7 +723,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "TRX") {
+    } else if (`${moeda.symbol}` == "TRX") {
       imagem = (
         <img
           src="/TRX.svg"
@@ -734,7 +732,7 @@ export default function Moeda({
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "FIL") {
+    } else if (`${moeda.symbol}` == "FIL") {
       imagem = (
         <img
           src="/FIL.svg"
@@ -758,7 +756,7 @@ export default function Moeda({
         <Link
           passHref={true}
           href={`../${selectMoedaFiat}/[id]`}
-          as={`../${selectMoedaFiat}/${moeda.symbol}`.toUpperCase()}
+          as={`../${selectMoedaFiat}/${moeda.symbol}`}
         >
           <div
             style={{
@@ -830,7 +828,7 @@ export default function Moeda({
               fontFamily: "arial",
             }}
           >
-            1 {`${propriedadesMoedaCryptoAtual.symbol}`.toUpperCase()} ≅{" "}
+            1 {`${propriedadesMoedaCryptoAtual.symbol}`} ≅{" "}
             {selectMoedaFiat == "BRL"
               ? `${propriedadesMoedaCryptoAtual.current_price.toFixed(
                   2
@@ -1006,7 +1004,7 @@ export default function Moeda({
 
         <div style={{ marginTop: "250px" }}>
           <Grafico
-            simbolo={`${propriedadesMoedaCryptoAtual.symbol.toUpperCase()}${selectMoedaFiat}`}
+            simbolo={`${propriedadesMoedaCryptoAtual.symbol}${selectMoedaFiat}`}
           />
         </div>
         {/* <div style={{ marginTop: "50px" }}>
@@ -1043,7 +1041,7 @@ export const getStaticPaths = async () => {
   }
 
   let paths1 = arrayDados.map((moeda) => {
-    return { params: { id: `${moeda.symbol}`.toUpperCase() } };
+    return { params: { id: `${moeda.symbol}` } };
   });
 
   const paths = paths1;
@@ -1088,7 +1086,7 @@ export const getStaticProps = async (context) => {
   let indexOptions = 0;
 
   arrayDadosBRL.map((moeda, index) => {
-    if (id == moeda.symbol.toUpperCase()) {
+    if (id == moeda.symbol) {
       indexOptions = index;
       propriedadesMoedaCryptoAtual = moeda;
       precoDaMoedaCrypto = moeda.current_price;
