@@ -36,7 +36,7 @@ import Parser from "html-react-parser";
 import useWindowDimensions from "../components/TamanhoDaTela";
 
 export default function Home({ propriedades, cotacoesFiat, precoETH }) {
-  //console.log(cotacoesFiat);
+  console.log(precoETH);
 
   const valorUSD = cotacoesFiat.USDBRL.ask;
   const valorEUR = cotacoesFiat.EURBRL.ask;
