@@ -41,6 +41,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
   const valorUSD = cotacoesFiat.USDBRL.ask;
   const valorEUR = cotacoesFiat.EURBRL.ask;
   const preco = parseFloat(precoETH);
+  const preco1 = precoETH;
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
@@ -492,7 +493,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
               fontFamily: "arial",
             }}
           >
-            1 {preco} {`${propriedades[1].symbol}`?.toUpperCase()} ≅{" "}
+            1 {preco1} {`${propriedades[1].symbol}`?.toUpperCase()} ≅{" "}
             {selectMoedaFiat == "BRL"
               ? `${preco?.toFixed(2)}`.replace(".", ",")
               : selectMoedaFiat == "USD"
