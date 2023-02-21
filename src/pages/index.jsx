@@ -44,12 +44,12 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
-  const [moedaFiat, setMoedaFiat] = useState(preco.toFixed(2));
+  const [moedaFiat, setMoedaFiat] = useState(preco?.toFixed(2));
   const [loading, setLoading] = useState(false);
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
-    setMoedaFiat(preco.toFixed(2));
+    setMoedaFiat(preco?.toFixed(2));
   }, [propriedades]);
 
   function handleScroll() {
@@ -116,21 +116,21 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
   const handleChangeSelectMoedaCrypto = (e) => {
     //console.log("FUNCIONOU", e.symbol);
     setLoading(true);
-    window.location.assign(`../${selectMoedaFiat}/${e.symbol.toUpperCase()}`);
+    window.location.assign(`../${selectMoedaFiat}/${e.symbol?.toUpperCase()}`);
   };
 
   const handleChangeSelectMoedaFiat = (e) => {
-    setSelectMoedaFiat(e.value.toUpperCase());
+    setSelectMoedaFiat(e.value?.toUpperCase());
 
-    if (e.value.toUpperCase() === "USD") {
+    if (e.value?.toUpperCase() === "USD") {
       const num = (moedaCrypto * preco) / valorUSD;
-      setMoedaFiat(num.toFixed(2));
-    } else if (e.value.toUpperCase() === "EUR") {
+      setMoedaFiat(num?.toFixed(2));
+    } else if (e.value?.toUpperCase() === "EUR") {
       const num = (moedaCrypto * preco) / valorEUR;
-      setMoedaFiat(num.toFixed(2));
+      setMoedaFiat(num?.toFixed(2));
     } else {
       const num = moedaCrypto * preco;
-      setMoedaFiat(num.toFixed(2));
+      setMoedaFiat(num?.toFixed(2));
     }
   };
 
@@ -139,13 +139,13 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
 
     if (selectMoedaFiat === "USD") {
       const num = (preco * e.target.value) / valorUSD;
-      setMoedaFiat(num.toFixed(2));
+      setMoedaFiat(num?.toFixed(2));
     } else if (selectMoedaFiat === "EUR") {
       const num = (preco * e.target.value) / valorEUR;
-      setMoedaFiat(num.toFixed(2));
+      setMoedaFiat(num?.toFixed(2));
     } else {
       const num = preco * e.target.value;
-      setMoedaFiat(num.toFixed(2));
+      setMoedaFiat(num?.toFixed(2));
     }
   };
 
@@ -203,7 +203,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
 
   propriedades.map((moeda, index) => {
     let imagem;
-    if (moeda.symbol.toUpperCase() == "BTC") {
+    if (moeda.symbol?.toUpperCase() == "BTC") {
       imagem = (
         <img
           src="/BTC.svg"
@@ -212,7 +212,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "ETH") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "ETH") {
       imagem = (
         <img
           src="/ETH.svg"
@@ -221,7 +221,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "USDT") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "USDT") {
       imagem = (
         <img
           src="/USDT.svg"
@@ -230,7 +230,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "ADA") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "ADA") {
       imagem = (
         <img
           src="/ADA.svg"
@@ -239,7 +239,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "BNB") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "BNB") {
       imagem = (
         <img
           src="/BNB.svg"
@@ -248,7 +248,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "XRP") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "XRP") {
       imagem = (
         <img
           src="/XRP.svg"
@@ -257,7 +257,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (moeda.symbol.toUpperCase() == "DOGE") {
+    } else if (moeda.symbol?.toUpperCase() == "DOGE") {
       imagem = (
         <img
           src="/DOGE.svg"
@@ -266,7 +266,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "USDC") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "USDC") {
       imagem = (
         <img
           src="/USDC.svg"
@@ -275,7 +275,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "DOT") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "DOT") {
       imagem = (
         <img
           src="/DOT.svg"
@@ -284,7 +284,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "UNI") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "UNI") {
       imagem = (
         <img
           src="/UNI.svg"
@@ -293,7 +293,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "BCH") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "BCH") {
       imagem = (
         <img
           src="/BCH.svg"
@@ -302,7 +302,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (moeda.symbol.toUpperCase() == "LINK") {
+    } else if (moeda.symbol?.toUpperCase() == "LINK") {
       imagem = (
         <img
           src="/LINK.svg"
@@ -311,7 +311,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "LTC") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "LTC") {
       imagem = (
         <img
           src="/LTC.svg"
@@ -320,7 +320,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "XLM") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "XLM") {
       imagem = (
         <img
           src="/XLM.svg"
@@ -329,7 +329,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "ETC") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "ETC") {
       imagem = (
         <img
           src="/ETC.svg"
@@ -338,7 +338,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "SOL") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "SOL") {
       imagem = (
         <img
           src="/SOL.svg"
@@ -347,7 +347,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "BUSD") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "BUSD") {
       imagem = (
         <img
           src="/BUSD.svg"
@@ -356,7 +356,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "VET") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "VET") {
       imagem = (
         <img
           src="/VET.svg"
@@ -365,7 +365,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "WBTC") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "WBTC") {
       imagem = (
         <img
           src="/WBTC.svg"
@@ -374,7 +374,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "THETA") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "THETA") {
       imagem = (
         <img
           src="/THETA.svg"
@@ -383,7 +383,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "EOS") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "EOS") {
       imagem = (
         <img
           src="/EOS.svg"
@@ -392,7 +392,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "TRX") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "TRX") {
       imagem = (
         <img
           src="/TRX.svg"
@@ -401,7 +401,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
           style={{ marginTop: "-3px" }}
         />
       );
-    } else if (`${moeda.symbol}`.toUpperCase() == "FIL") {
+    } else if (`${moeda.symbol}`?.toUpperCase() == "FIL") {
       imagem = (
         <img
           src="/FIL.svg"
@@ -425,7 +425,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
         <Link
           passHref={true}
           href={`${selectMoedaFiat}/[id]`}
-          as={`${selectMoedaFiat}/${moeda.symbol}`.toUpperCase()}
+          as={`${selectMoedaFiat}/${moeda.symbol}`?.toUpperCase()}
         >
           <div
             style={{
@@ -492,12 +492,12 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
               fontFamily: "arial",
             }}
           >
-            1 {`${propriedades[1].symbol}`.toUpperCase()} ≅{" "}
+            1 {`${propriedades[1].symbol}`?.toUpperCase()} ≅{" "}
             {selectMoedaFiat == "BRL"
-              ? `${preco.toFixed(2)}`.replace(".", ",")
+              ? `${preco?.toFixed(2)}`.replace(".", ",")
               : selectMoedaFiat == "USD"
-              ? `${(preco / valorUSD).toFixed(2)}`.replace(".", ",")
-              : `${(preco / valorEUR).toFixed(2)}`.replace(".", ",")}{" "}
+              ? `${(preco / valorUSD)?.toFixed(2)}`.replace(".", ",")
+              : `${(preco / valorEUR)?.toFixed(2)}`.replace(".", ",")}{" "}
             {selectMoedaFiat}
           </div>
         </div>
@@ -673,7 +673,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
 
         <div style={{ marginTop: "250px" }}>
           <Grafico
-            simbolo={`${propriedades[1].symbol.toUpperCase()}${selectMoedaFiat}`}
+            simbolo={`${propriedades[1].symbol?.toUpperCase()}${selectMoedaFiat}`}
           />
         </div>
         {/* <div style={{ marginTop: "50px" }}>
@@ -692,7 +692,7 @@ export const getServerSideProps = async () => {
   const response = await fetch(urlBinance);
   const data = await response.json();
   const precoTemp = parseFloat(data.price);
-  const preco = precoTemp.toFixed(2);
+  const preco = precoTemp?.toFixed(2);
 
   //console.log(data.price);
   //return preco;
