@@ -492,7 +492,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH }) {
               fontFamily: "arial",
             }}
           >
-            1 {`${propriedades[1].symbol}`?.toUpperCase()} ≅{" "}
+            1 {preco?.toFixed(2)} {`${propriedades[1].symbol}`?.toUpperCase()} ≅{" "}
             {selectMoedaFiat == "BRL"
               ? `${preco?.toFixed(2)}`.replace(".", ",")
               : selectMoedaFiat == "USD"
