@@ -35,12 +35,12 @@ import content from "../pages/api/frontaid.content.json";
 import Parser from "html-react-parser";
 import useWindowDimensions from "../components/TamanhoDaTela";
 
-export default function Home({ propriedades, cotacoesFiat, precoETH }) {
-  console.log(precoETH);
+export default function Home({ propriedades, cotacoesFiat, precoETH, data }) {
+  console.log(data);
 
   const valorUSD = cotacoesFiat.USDBRL.ask;
   const valorEUR = cotacoesFiat.EURBRL.ask;
-  const preco = parseFloat(precoETH);
+  const preco = parseFloat(data.price);
   const preco1 = precoETH;
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
@@ -695,7 +695,7 @@ export const getServerSideProps = async () => {
   const precoTemp = parseFloat(data.price);
   const preco = precoTemp?.toFixed(2);
 
-  //console.log(data.price);
+  console.log(data.price);
   //return preco;
   //}
 
@@ -730,6 +730,7 @@ export const getServerSideProps = async () => {
       propriedades: arrayDadosBRL,
       cotacoesFiat: cotacoesFiat,
       precoETH: preco,
+      data: data,
     },
   };
 };
