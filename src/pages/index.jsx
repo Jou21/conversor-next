@@ -36,12 +36,11 @@ import Parser from "html-react-parser";
 import useWindowDimensions from "../components/TamanhoDaTela";
 
 export default function Home({ propriedades, cotacoesFiat, precoETH, data }) {
-  console.log(data);
+  //console.log(propriedades.[1].current_price);
 
   const valorUSD = cotacoesFiat.USDBRL.ask;
   const valorEUR = cotacoesFiat.EURBRL.ask;
-  const preco = parseFloat(data.price);
-  const preco1 = precoETH;
+  const preco = parseFloat(propriedades.[1].current_price);
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
   const [moedaCrypto, setMoedaCrypto] = useState(1);
@@ -493,7 +492,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH, data }) {
               fontFamily: "arial",
             }}
           >
-            1 {preco1} {`${propriedades[1].symbol}`?.toUpperCase()} ≅{" "}
+            1 {`${propriedades[1].symbol}`?.toUpperCase()} ≅{" "}
             {selectMoedaFiat == "BRL"
               ? `${preco?.toFixed(2)}`.replace(".", ",")
               : selectMoedaFiat == "USD"
@@ -695,7 +694,7 @@ export const getServerSideProps = async () => {
   const precoTemp = parseFloat(data.price);
   const preco = precoTemp?.toFixed(2);
 
-  console.log(data.price);
+  //console.log(data.price);
   //return preco;
   //}
 
