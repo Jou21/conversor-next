@@ -39,7 +39,7 @@ export default function Home({ propriedades, cotacoesFiat, precoETH, data }) {
   //console.log(propriedades.[1].current_price);
 
   const valorUSD = cotacoesFiat.USDBRL.ask;
-  const valorEUR = cotacoesFiat.EURBRL.ask;
+  const valorEUR = cotacoesFiat.EURBRL.ask; 
   const preco = parseFloat(propriedades.[1].current_price);
 
   const [selectMoedaFiat, setSelectMoedaFiat] = useState("BRL");
