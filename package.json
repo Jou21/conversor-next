@@ -7,9 +7,6 @@
     "build": "next build",
     "start": "next start"
   },
-  "engines": {
-    "node": "20.x"
-  },
   "dependencies": {
     "axios": "^0.21.1",
     "html-react-parser": "^1.2.6",
