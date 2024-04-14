@@ -62,9 +62,9 @@ function MyApp({ Component, pageProps }) {
           data-lang="pt"
           data-width="700"
           data-dnt="true"
-          href="https://twitter.com/EthereumHoje/lists/1424805327833272322?ref_src=twsrc%5Etfw"
+          href="https://twitter.com/i/communities/1506789406203695107"
         >
-          A Twitter List by EthereumHoje
+          A Twitter List by Ethereum Hoje
         </a>
       </div> */}
 
